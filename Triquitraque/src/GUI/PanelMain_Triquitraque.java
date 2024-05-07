@@ -14,13 +14,8 @@ import javax.swing.border.Border;
  * @author keive
  */
 public class PanelMain_Triquitraque extends javax.swing.JFrame {
-
     /** Creates new form PanelMain_Triquitraque */
     public PanelMain_Triquitraque() {
-        init();
-    }
-    
-    public void init(){
         setUndecorated(true);
         initComponents();
         setResizable(false);
@@ -31,7 +26,6 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
         Border bordeBoton = BorderFactory.createLineBorder(new Color(0,0,0),0);
         panelBoton.setBorder(bordeBoton);
     }
-
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -41,9 +35,10 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        rbtTamañoTablero = new javax.swing.ButtonGroup();
         panelFondo = new diseño.PanelRedondeado();
         lblCierre = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        lblTamaño = new javax.swing.JLabel();
         txtJugador2 = new javax.swing.JTextField();
         txtJugador1 = new javax.swing.JTextField();
         panelBoton = new javax.swing.JPanel();
@@ -52,6 +47,12 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        rbt5x5 = new javax.swing.JRadioButton();
+        rbt3x3 = new javax.swing.JRadioButton();
+        rbt4x4 = new javax.swing.JRadioButton();
+        lblTitulo = new javax.swing.JLabel();
+        cbColorJ2 = new javax.swing.JComboBox<>();
+        cbColorJ1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,14 +81,14 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
             }
         });
         panelFondo.add(lblCierre);
-        lblCierre.setBounds(380, 10, 30, 32);
+        lblCierre.setBounds(430, 0, 30, 32);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("TriquiTraque");
-        panelFondo.add(jLabel1);
-        jLabel1.setBounds(0, 30, 420, 42);
+        lblTamaño.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        lblTamaño.setForeground(new java.awt.Color(0, 0, 0));
+        lblTamaño.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTamaño.setText("Elije el tamaño del tablero:");
+        panelFondo.add(lblTamaño);
+        lblTamaño.setBounds(30, 220, 200, 42);
 
         txtJugador2.setBackground(new java.awt.Color(183, 216, 242));
         txtJugador2.setFont(new java.awt.Font("Montserrat", 1, 28)); // NOI18N
@@ -117,7 +118,7 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
             }
         });
         panelFondo.add(txtJugador2);
-        txtJugador2.setBounds(100, 160, 230, 40);
+        txtJugador2.setBounds(80, 160, 230, 40);
 
         txtJugador1.setBackground(new java.awt.Color(255, 199, 179));
         txtJugador1.setFont(new java.awt.Font("Montserrat", 1, 28)); // NOI18N
@@ -147,7 +148,7 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
             }
         });
         panelFondo.add(txtJugador1);
-        txtJugador1.setBounds(100, 100, 230, 40);
+        txtJugador1.setBounds(80, 100, 230, 40);
 
         panelBoton.setBackground(new java.awt.Color(217, 176, 143));
 
@@ -185,35 +186,73 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
         );
 
         panelFondo.add(panelBoton);
-        panelBoton.setBounds(130, 230, 160, 50);
+        panelBoton.setBounds(140, 280, 160, 50);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/x.png"))); // NOI18N
         jLabel3.setPreferredSize(new java.awt.Dimension(36, 36));
         panelFondo.add(jLabel3);
-        jLabel3.setBounds(340, 100, 32, 32);
+        jLabel3.setBounds(320, 100, 32, 32);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/iconopersona.png"))); // NOI18N
         panelFondo.add(jLabel5);
-        jLabel5.setBounds(50, 160, 40, 40);
+        jLabel5.setBounds(30, 160, 40, 40);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/iconopersona.png"))); // NOI18N
         panelFondo.add(jLabel4);
-        jLabel4.setBounds(50, 100, 40, 40);
+        jLabel4.setBounds(30, 100, 40, 40);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/circulo.png"))); // NOI18N
         jLabel6.setPreferredSize(new java.awt.Dimension(36, 36));
         panelFondo.add(jLabel6);
-        jLabel6.setBounds(340, 160, 40, 40);
+        jLabel6.setBounds(320, 160, 40, 40);
+
+        rbtTamañoTablero.add(rbt5x5);
+        rbt5x5.setForeground(new java.awt.Color(0, 0, 0));
+        rbt5x5.setText("5x5");
+        panelFondo.add(rbt5x5);
+        rbt5x5.setBounds(360, 230, 50, 21);
+
+        rbtTamañoTablero.add(rbt3x3);
+        rbt3x3.setForeground(new java.awt.Color(0, 0, 0));
+        rbt3x3.setText("3x3");
+        rbt3x3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbt3x3MouseClicked(evt);
+            }
+        });
+        panelFondo.add(rbt3x3);
+        rbt3x3.setBounds(240, 230, 41, 21);
+
+        rbtTamañoTablero.add(rbt4x4);
+        rbt4x4.setForeground(new java.awt.Color(0, 0, 0));
+        rbt4x4.setText("4x4");
+        panelFondo.add(rbt4x4);
+        rbt4x4.setBounds(300, 230, 50, 21);
+
+        lblTitulo.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(0, 0, 0));
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitulo.setText("TriquiTraque");
+        panelFondo.add(lblTitulo);
+        lblTitulo.setBounds(0, 30, 420, 42);
+
+        cbColorJ2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Azul", "Rojo", "Amarillo", "Negro", "Verde", "Rosado" }));
+        panelFondo.add(cbColorJ2);
+        cbColorJ2.setBounds(370, 170, 79, 22);
+
+        cbColorJ1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Azul", "Rojo", "Amarillo", "Negro", "Verde", "Rosado" }));
+        panelFondo.add(cbColorJ1);
+        cbColorJ1.setBounds(370, 100, 79, 22);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelFondo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
         );
 
         pack();
@@ -290,6 +329,21 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
 
     private void lblInicarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInicarMousePressed
         this.dispose();
+        
+        Jugador jugador1 = new Jugador();
+        if(txtJugador1.getText().equals(""))
+            jugador1.setNombre("JUGADOR1");
+        else
+            jugador1.setNombre(txtJugador1.getText());
+        
+        Jugador jugador2 = new Jugador();
+        if(txtJugador2.getText().equals(""))
+            jugador2.setNombre("JUGADOR2");
+        else
+            jugador2.setNombre(txtJugador2.getText());
+        
+        PanelTablero_TriquiTraque tikTacToe = new PanelTablero_TriquiTraque(jugador1,jugador2);
+        tikTacToe.setVisible(true);
     }//GEN-LAST:event_lblInicarMousePressed
 
     private void lblInicarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInicarMouseEntered
@@ -299,6 +353,10 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
     private void lblInicarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInicarMouseExited
         panelBoton.setBackground(new Color(217, 176, 143));
     }//GEN-LAST:event_lblInicarMouseExited
+
+    private void rbt3x3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbt3x3MouseClicked
+       
+    }//GEN-LAST:event_rbt3x3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -336,15 +394,22 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JComboBox<String> cbColorJ1;
+    private javax.swing.JComboBox<String> cbColorJ2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel lblCierre;
     private javax.swing.JLabel lblInicar;
+    private javax.swing.JLabel lblTamaño;
+    private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel panelBoton;
     private javax.swing.JPanel panelFondo;
+    private javax.swing.JRadioButton rbt3x3;
+    private javax.swing.JRadioButton rbt4x4;
+    private javax.swing.JRadioButton rbt5x5;
+    private javax.swing.ButtonGroup rbtTamañoTablero;
     private javax.swing.JTextField txtJugador1;
     private javax.swing.JTextField txtJugador2;
     // End of variables declaration//GEN-END:variables
