@@ -6,7 +6,7 @@ package GUI;
 
 /**
  *
- * @author keive
+ * @author keiver
  */
 import java.awt.Color;
 import javax.swing.JLabel;

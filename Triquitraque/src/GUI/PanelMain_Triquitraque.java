@@ -15,7 +15,7 @@ import javax.swing.border.Border;
 
 /**
  *
- * @author keive
+ * @author keiver
  */
 public class PanelMain_Triquitraque extends javax.swing.JFrame {
     
@@ -36,17 +36,14 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
         txtJugador1.setText(nombre);
     }
 
-    // Método para establecer el nombre del Jugador 2
     public void setNombreJugador2(String nombre) {
         txtJugador2.setText(nombre);
     }
 
-    // Método para establecer el color del Jugador 1
     public void setColorJugador1(Color color) {
         txtJugador1.setForeground(color);
     }
-
-    // Método para establecer el color del Jugador 2
+    
     public void setColorJugador2(Color color) {
         txtJugador1.setForeground(color);
     }
