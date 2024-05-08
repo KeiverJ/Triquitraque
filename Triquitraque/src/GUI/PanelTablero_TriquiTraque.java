@@ -1,7 +1,9 @@
+
 package GUI;
 
 import java.awt.Color;
 import GUI.Jugador;
+
 
 public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
@@ -17,6 +19,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
     Tablero tablero3x3 = new Tablero(matriz3x3, this);
     Tablero tablero4x4 = new Tablero(matriz4x4, this);
     Tablero tablero5x5 = new Tablero(matriz5x5, this);
+    
     int casilla = 0;
     boolean turnoJugador1 = true;
 
@@ -94,22 +97,22 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         jl9 = new javax.swing.JLabel();
         jPanel4x4 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
-        jl10 = new javax.swing.JLabel();
-        jl11 = new javax.swing.JLabel();
-        jl12 = new javax.swing.JLabel();
-        jl13 = new javax.swing.JLabel();
-        jl14 = new javax.swing.JLabel();
-        jl15 = new javax.swing.JLabel();
-        jl16 = new javax.swing.JLabel();
         jl17 = new javax.swing.JLabel();
         jl18 = new javax.swing.JLabel();
         jl19 = new javax.swing.JLabel();
         jl20 = new javax.swing.JLabel();
+        jl10 = new javax.swing.JLabel();
         jl21 = new javax.swing.JLabel();
+        jl11 = new javax.swing.JLabel();
         jl22 = new javax.swing.JLabel();
+        jl12 = new javax.swing.JLabel();
         jl23 = new javax.swing.JLabel();
+        jl13 = new javax.swing.JLabel();
         jl24 = new javax.swing.JLabel();
+        jl14 = new javax.swing.JLabel();
         jl25 = new javax.swing.JLabel();
+        jl15 = new javax.swing.JLabel();
+        jl16 = new javax.swing.JLabel();
         jPanel5x5 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -182,7 +185,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         jPanel2.add(lblCierre, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 30, -1));
 
         panelFondo.add(jPanel2);
-        jPanel2.setBounds(10, 20, 410, 180);
+        jPanel2.setBounds(10, 20, 410, 210);
 
         jTabbedPane1.setBackground(new java.awt.Color(240, 232, 216));
 
@@ -395,107 +398,9 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         jPanel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel7.setPreferredSize(new java.awt.Dimension(220, 220));
 
-        jl10.setBackground(new java.awt.Color(255, 255, 255));
-        jl10.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jl10.setForeground(new java.awt.Color(0, 0, 0));
-        jl10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jl10.setMaximumSize(new java.awt.Dimension(55, 55));
-        jl10.setMinimumSize(new java.awt.Dimension(55, 55));
-        jl10.setOpaque(true);
-        jl10.setPreferredSize(new java.awt.Dimension(55, 55));
-        jl10.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jl10MousePressed(evt);
-            }
-        });
-
-        jl11.setBackground(new java.awt.Color(255, 255, 255));
-        jl11.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jl11.setForeground(new java.awt.Color(0, 0, 0));
-        jl11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jl11.setMaximumSize(new java.awt.Dimension(55, 55));
-        jl11.setMinimumSize(new java.awt.Dimension(55, 55));
-        jl11.setOpaque(true);
-        jl11.setPreferredSize(new java.awt.Dimension(55, 55));
-        jl11.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jl11MousePressed(evt);
-            }
-        });
-
-        jl12.setBackground(new java.awt.Color(255, 255, 255));
-        jl12.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jl12.setForeground(new java.awt.Color(0, 0, 0));
-        jl12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jl12.setMaximumSize(new java.awt.Dimension(55, 55));
-        jl12.setMinimumSize(new java.awt.Dimension(55, 55));
-        jl12.setOpaque(true);
-        jl12.setPreferredSize(new java.awt.Dimension(55, 55));
-        jl12.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jl12MousePressed(evt);
-            }
-        });
-
-        jl13.setBackground(new java.awt.Color(255, 255, 255));
-        jl13.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jl13.setForeground(new java.awt.Color(0, 0, 0));
-        jl13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jl13.setMaximumSize(new java.awt.Dimension(55, 55));
-        jl13.setMinimumSize(new java.awt.Dimension(55, 55));
-        jl13.setOpaque(true);
-        jl13.setPreferredSize(new java.awt.Dimension(55, 55));
-        jl13.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jl13MousePressed(evt);
-            }
-        });
-
-        jl14.setBackground(new java.awt.Color(255, 255, 255));
-        jl14.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jl14.setForeground(new java.awt.Color(0, 0, 0));
-        jl14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jl14.setMaximumSize(new java.awt.Dimension(55, 55));
-        jl14.setMinimumSize(new java.awt.Dimension(55, 55));
-        jl14.setOpaque(true);
-        jl14.setPreferredSize(new java.awt.Dimension(55, 55));
-        jl14.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jl14MousePressed(evt);
-            }
-        });
-
-        jl15.setBackground(new java.awt.Color(255, 255, 255));
-        jl15.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jl15.setForeground(new java.awt.Color(0, 0, 0));
-        jl15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jl15.setMaximumSize(new java.awt.Dimension(55, 55));
-        jl15.setMinimumSize(new java.awt.Dimension(55, 55));
-        jl15.setOpaque(true);
-        jl15.setPreferredSize(new java.awt.Dimension(55, 55));
-        jl15.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jl15MousePressed(evt);
-            }
-        });
-
-        jl16.setBackground(new java.awt.Color(255, 255, 255));
-        jl16.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jl16.setForeground(new java.awt.Color(0, 0, 0));
-        jl16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jl16.setMaximumSize(new java.awt.Dimension(55, 55));
-        jl16.setMinimumSize(new java.awt.Dimension(55, 55));
-        jl16.setOpaque(true);
-        jl16.setPreferredSize(new java.awt.Dimension(55, 55));
-        jl16.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jl16MousePressed(evt);
-            }
-        });
-
         jl17.setBackground(new java.awt.Color(255, 255, 255));
         jl17.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jl17.setForeground(new java.awt.Color(0, 0, 0));
+        jl17.setForeground(new java.awt.Color(51, 51, 51));
         jl17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jl17.setMaximumSize(new java.awt.Dimension(55, 55));
         jl17.setMinimumSize(new java.awt.Dimension(55, 55));
@@ -509,7 +414,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
         jl18.setBackground(new java.awt.Color(255, 255, 255));
         jl18.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jl18.setForeground(new java.awt.Color(0, 0, 0));
+        jl18.setForeground(new java.awt.Color(51, 51, 51));
         jl18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jl18.setMaximumSize(new java.awt.Dimension(55, 55));
         jl18.setMinimumSize(new java.awt.Dimension(55, 55));
@@ -523,7 +428,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
         jl19.setBackground(new java.awt.Color(255, 255, 255));
         jl19.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jl19.setForeground(new java.awt.Color(0, 0, 0));
+        jl19.setForeground(new java.awt.Color(51, 51, 51));
         jl19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jl19.setMaximumSize(new java.awt.Dimension(55, 55));
         jl19.setMinimumSize(new java.awt.Dimension(55, 55));
@@ -537,7 +442,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
         jl20.setBackground(new java.awt.Color(255, 255, 255));
         jl20.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jl20.setForeground(new java.awt.Color(0, 0, 0));
+        jl20.setForeground(new java.awt.Color(51, 51, 51));
         jl20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jl20.setMaximumSize(new java.awt.Dimension(55, 55));
         jl20.setMinimumSize(new java.awt.Dimension(55, 55));
@@ -549,9 +454,23 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
             }
         });
 
+        jl10.setBackground(new java.awt.Color(255, 255, 255));
+        jl10.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jl10.setForeground(new java.awt.Color(51, 51, 51));
+        jl10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl10.setMaximumSize(new java.awt.Dimension(55, 55));
+        jl10.setMinimumSize(new java.awt.Dimension(55, 55));
+        jl10.setOpaque(true);
+        jl10.setPreferredSize(new java.awt.Dimension(55, 55));
+        jl10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jl10MousePressed(evt);
+            }
+        });
+
         jl21.setBackground(new java.awt.Color(255, 255, 255));
         jl21.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jl21.setForeground(new java.awt.Color(0, 0, 0));
+        jl21.setForeground(new java.awt.Color(51, 51, 51));
         jl21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jl21.setMaximumSize(new java.awt.Dimension(55, 55));
         jl21.setMinimumSize(new java.awt.Dimension(55, 55));
@@ -563,9 +482,23 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
             }
         });
 
+        jl11.setBackground(new java.awt.Color(255, 255, 255));
+        jl11.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jl11.setForeground(new java.awt.Color(51, 51, 51));
+        jl11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl11.setMaximumSize(new java.awt.Dimension(55, 55));
+        jl11.setMinimumSize(new java.awt.Dimension(55, 55));
+        jl11.setOpaque(true);
+        jl11.setPreferredSize(new java.awt.Dimension(55, 55));
+        jl11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jl11MousePressed(evt);
+            }
+        });
+
         jl22.setBackground(new java.awt.Color(255, 255, 255));
         jl22.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jl22.setForeground(new java.awt.Color(0, 0, 0));
+        jl22.setForeground(new java.awt.Color(51, 51, 51));
         jl22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jl22.setMaximumSize(new java.awt.Dimension(55, 55));
         jl22.setMinimumSize(new java.awt.Dimension(55, 55));
@@ -577,9 +510,23 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
             }
         });
 
+        jl12.setBackground(new java.awt.Color(255, 255, 255));
+        jl12.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jl12.setForeground(new java.awt.Color(51, 51, 51));
+        jl12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl12.setMaximumSize(new java.awt.Dimension(55, 55));
+        jl12.setMinimumSize(new java.awt.Dimension(55, 55));
+        jl12.setOpaque(true);
+        jl12.setPreferredSize(new java.awt.Dimension(55, 55));
+        jl12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jl12MousePressed(evt);
+            }
+        });
+
         jl23.setBackground(new java.awt.Color(255, 255, 255));
         jl23.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jl23.setForeground(new java.awt.Color(0, 0, 0));
+        jl23.setForeground(new java.awt.Color(51, 51, 51));
         jl23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jl23.setMaximumSize(new java.awt.Dimension(55, 55));
         jl23.setMinimumSize(new java.awt.Dimension(55, 55));
@@ -591,9 +538,23 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
             }
         });
 
+        jl13.setBackground(new java.awt.Color(255, 255, 255));
+        jl13.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jl13.setForeground(new java.awt.Color(51, 51, 51));
+        jl13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl13.setMaximumSize(new java.awt.Dimension(55, 55));
+        jl13.setMinimumSize(new java.awt.Dimension(55, 55));
+        jl13.setOpaque(true);
+        jl13.setPreferredSize(new java.awt.Dimension(55, 55));
+        jl13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jl13MousePressed(evt);
+            }
+        });
+
         jl24.setBackground(new java.awt.Color(255, 255, 255));
         jl24.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jl24.setForeground(new java.awt.Color(0, 0, 0));
+        jl24.setForeground(new java.awt.Color(51, 51, 51));
         jl24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jl24.setMaximumSize(new java.awt.Dimension(55, 55));
         jl24.setMinimumSize(new java.awt.Dimension(55, 55));
@@ -605,9 +566,23 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
             }
         });
 
+        jl14.setBackground(new java.awt.Color(255, 255, 255));
+        jl14.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jl14.setForeground(new java.awt.Color(51, 51, 51));
+        jl14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl14.setMaximumSize(new java.awt.Dimension(55, 55));
+        jl14.setMinimumSize(new java.awt.Dimension(55, 55));
+        jl14.setOpaque(true);
+        jl14.setPreferredSize(new java.awt.Dimension(55, 55));
+        jl14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jl14MousePressed(evt);
+            }
+        });
+
         jl25.setBackground(new java.awt.Color(255, 255, 255));
         jl25.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jl25.setForeground(new java.awt.Color(0, 0, 0));
+        jl25.setForeground(new java.awt.Color(51, 51, 51));
         jl25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jl25.setMaximumSize(new java.awt.Dimension(55, 55));
         jl25.setMinimumSize(new java.awt.Dimension(55, 55));
@@ -619,13 +594,41 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
             }
         });
 
+        jl15.setBackground(new java.awt.Color(255, 255, 255));
+        jl15.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jl15.setForeground(new java.awt.Color(51, 51, 51));
+        jl15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl15.setMaximumSize(new java.awt.Dimension(55, 55));
+        jl15.setMinimumSize(new java.awt.Dimension(55, 55));
+        jl15.setOpaque(true);
+        jl15.setPreferredSize(new java.awt.Dimension(55, 55));
+        jl15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jl15MousePressed(evt);
+            }
+        });
+
+        jl16.setBackground(new java.awt.Color(255, 255, 255));
+        jl16.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jl16.setForeground(new java.awt.Color(51, 51, 51));
+        jl16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jl16.setMaximumSize(new java.awt.Dimension(55, 55));
+        jl16.setMinimumSize(new java.awt.Dimension(55, 55));
+        jl16.setOpaque(true);
+        jl16.setPreferredSize(new java.awt.Dimension(55, 55));
+        jl16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jl16MousePressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(8, 8, 8)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jl10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -633,63 +636,63 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jl12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jl20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jl13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jl13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jl14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jl15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jl25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jl16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jl17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jl17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jl18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jl23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jl19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jl21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jl20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jl21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
                         .addComponent(jl22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jl24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jl23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jl24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jl25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(8, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(8, 8, 8)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jl10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jl11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jl12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jl20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jl13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jl13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jl14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jl15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jl25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jl17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jl14, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jl15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jl16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jl18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jl23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jl19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jl19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jl21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jl22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jl24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(jl24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jl25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8))
         );
 
         javax.swing.GroupLayout jPanel4x4Layout = new javax.swing.GroupLayout(jPanel4x4);
@@ -998,6 +1001,114 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jl9MousePressed
 
+    private void jl17MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl17MousePressed
+
+        if (jl17.getText().isEmpty()) {
+
+            if (turnoJugador1) {
+
+                jl17.setText(tablero4x4.colocarFicha(turnoJugador1));
+                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl17);
+                turnoJugador1 = false;
+
+            } else {
+
+                jl17.setText(tablero4x4.colocarFicha(turnoJugador1));
+                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl17);
+                turnoJugador1 = true;
+
+            }
+
+        }
+
+        casilla = 8;
+        String marca = jl17.getText();
+
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+
+    }//GEN-LAST:event_jl17MousePressed
+
+    private void jl18MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl18MousePressed
+
+        if (jl18.getText().isEmpty()) {
+
+            if (turnoJugador1) {
+
+                jl18.setText(tablero4x4.colocarFicha(turnoJugador1));
+                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl18);
+                turnoJugador1 = false;
+
+            } else {
+
+                jl18.setText(tablero4x4.colocarFicha(turnoJugador1));
+                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl18);
+                turnoJugador1 = true;
+
+            }
+
+        }
+        
+        casilla = 9;
+        String marca = jl18.getText();
+
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+
+    }//GEN-LAST:event_jl18MousePressed
+
+    private void jl19MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl19MousePressed
+
+        if (jl19.getText().isEmpty()) {
+
+            if (turnoJugador1) {
+
+                jl19.setText(tablero4x4.colocarFicha(turnoJugador1));
+                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl19);
+                turnoJugador1 = false;
+
+            } else {
+
+                jl19.setText(tablero4x4.colocarFicha(turnoJugador1));
+                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl19);
+                turnoJugador1 = true;
+
+            }
+
+        }
+
+        casilla = 10;
+        String marca = jl19.getText();
+
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+
+    }//GEN-LAST:event_jl19MousePressed
+
+    private void jl20MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl20MousePressed
+
+        if (jl20.getText().isEmpty()) {
+
+            if (turnoJugador1) {
+
+                jl20.setText(tablero4x4.colocarFicha(turnoJugador1));
+                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl20);
+                turnoJugador1 = false;
+
+            } else {
+
+                jl20.setText(tablero4x4.colocarFicha(turnoJugador1));
+                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl20);
+                turnoJugador1 = true;
+
+            }
+
+        }
+
+        casilla = 11;
+        String marca = jl20.getText();
+
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+
+    }//GEN-LAST:event_jl20MousePressed
+
     private void jl10MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl10MousePressed
 
         if (jl10.getText().isEmpty()) {
@@ -1020,10 +1131,37 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
         casilla = 1;
         String marca = jl10.getText();
+
         tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
 
-
     }//GEN-LAST:event_jl10MousePressed
+
+    private void jl21MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl21MousePressed
+
+        if (jl21.getText().isEmpty()) {
+
+            if (turnoJugador1) {
+
+                jl21.setText(tablero4x4.colocarFicha(turnoJugador1));
+                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl21);
+                turnoJugador1 = false;
+
+            } else {
+
+                jl21.setText(tablero4x4.colocarFicha(turnoJugador1));
+                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl21);
+                turnoJugador1 = true;
+
+            }
+
+        }
+
+        casilla = 12;
+        String marca = jl21.getText();
+
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+
+    }//GEN-LAST:event_jl21MousePressed
 
     private void jl11MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl11MousePressed
 
@@ -1047,8 +1185,37 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
         casilla = 2;
         String marca = jl11.getText();
+
         tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+
     }//GEN-LAST:event_jl11MousePressed
+
+    private void jl22MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl22MousePressed
+
+        if (jl22.getText().isEmpty()) {
+
+            if (turnoJugador1) {
+
+                jl22.setText(tablero4x4.colocarFicha(turnoJugador1));
+                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl22);
+                turnoJugador1 = false;
+
+            } else {
+
+                jl22.setText(tablero4x4.colocarFicha(turnoJugador1));
+                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl22);
+                turnoJugador1 = true;
+
+            }
+
+        }
+
+        casilla = 13;
+        String marca = jl22.getText();
+
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+
+    }//GEN-LAST:event_jl22MousePressed
 
     private void jl12MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl12MousePressed
 
@@ -1072,8 +1239,37 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
         casilla = 3;
         String marca = jl12.getText();
+
         tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+
     }//GEN-LAST:event_jl12MousePressed
+
+    private void jl23MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl23MousePressed
+
+        if (jl23.getText().isEmpty()) {
+
+            if (turnoJugador1) {
+
+                jl23.setText(tablero4x4.colocarFicha(turnoJugador1));
+                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl23);
+                turnoJugador1 = false;
+
+            } else {
+
+                jl23.setText(tablero4x4.colocarFicha(turnoJugador1));
+                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl23);
+                turnoJugador1 = true;
+
+            }
+
+        }
+
+        casilla = 14;
+        String marca = jl23.getText();
+
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+
+    }//GEN-LAST:event_jl23MousePressed
 
     private void jl13MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl13MousePressed
 
@@ -1082,13 +1278,13 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
             if (turnoJugador1) {
 
                 jl13.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
+                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl13);
                 turnoJugador1 = false;
 
             } else {
 
                 jl13.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
+                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl13);
                 turnoJugador1 = true;
 
             }
@@ -1097,9 +1293,91 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
         casilla = 4;
         String marca = jl13.getText();
+
         tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
 
     }//GEN-LAST:event_jl13MousePressed
+
+    private void jl24MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl24MousePressed
+
+        if (jl24.getText().isEmpty()) {
+
+            if (turnoJugador1) {
+
+                jl24.setText(tablero4x4.colocarFicha(turnoJugador1));
+                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl24);
+                turnoJugador1 = false;
+
+            } else {
+
+                jl24.setText(tablero4x4.colocarFicha(turnoJugador1));
+                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl24);
+                turnoJugador1 = true;
+
+            }
+
+        }
+
+        casilla = 15;
+        String marca = jl24.getText();
+
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+
+    }//GEN-LAST:event_jl24MousePressed
+
+    private void jl14MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl14MousePressed
+
+        if (jl14.getText().isEmpty()) {
+
+            if (turnoJugador1) {
+
+                jl14.setText(tablero4x4.colocarFicha(turnoJugador1));
+                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl14);
+                turnoJugador1 = false;
+
+            } else {
+
+                jl14.setText(tablero4x4.colocarFicha(turnoJugador1));
+                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl14);
+                turnoJugador1 = true;
+
+            }
+
+        }
+
+        casilla = 5;
+        String marca = jl14.getText();
+
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+
+    }//GEN-LAST:event_jl14MousePressed
+
+    private void jl25MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl25MousePressed
+
+        if (jl25.getText().isEmpty()) {
+
+            if (turnoJugador1) {
+
+                jl25.setText(tablero4x4.colocarFicha(turnoJugador1));
+                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl25);
+                turnoJugador1 = false;
+
+            } else {
+
+                jl25.setText(tablero4x4.colocarFicha(turnoJugador1));
+                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl25);
+                turnoJugador1 = true;
+
+            }
+
+        }
+
+        casilla = 16;
+        String marca = jl25.getText();
+
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+
+    }//GEN-LAST:event_jl25MousePressed
 
     private void jl15MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl15MousePressed
 
@@ -1108,21 +1386,24 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
             if (turnoJugador1) {
 
                 jl15.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
+                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl15);
                 turnoJugador1 = false;
 
             } else {
 
                 jl15.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
+                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl15);
                 turnoJugador1 = true;
 
             }
 
         }
+
         casilla = 6;
         String marca = jl15.getText();
+
         tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+
     }//GEN-LAST:event_jl15MousePressed
 
     private void jl16MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl16MousePressed
@@ -1132,13 +1413,13 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
             if (turnoJugador1) {
 
                 jl16.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
+                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl16);
                 turnoJugador1 = false;
 
             } else {
 
                 jl16.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
+                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl16);
                 turnoJugador1 = true;
 
             }
@@ -1147,266 +1428,26 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
         casilla = 7;
         String marca = jl16.getText();
+
         tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+
     }//GEN-LAST:event_jl16MousePressed
 
-    private void jl17MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl17MousePressed
-
-        if (jl17.getText().isEmpty()) {
-
-            if (turnoJugador1) {
-
-                jl17.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
-                turnoJugador1 = false;
-
-            } else {
-
-                jl17.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
-                turnoJugador1 = true;
-
-            }
-
-        }
-
-        casilla = 8;
-        String marca = jl17.getText();
-        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
-    }//GEN-LAST:event_jl17MousePressed
-
-    private void jl18MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl18MousePressed
-
-        if (jl18.getText().isEmpty()) {
-
-            if (turnoJugador1) {
-
-                jl18.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
-                turnoJugador1 = false;
-
-            } else {
-
-                jl18.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
-                turnoJugador1 = true;
-
-            }
-        }
-
-        casilla = 9;
-        String marca = jl18.getText();
-        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
-    }//GEN-LAST:event_jl18MousePressed
-
-    private void jl19MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl19MousePressed
-
-        if (jl19.getText().isEmpty()) {
-
-            if (turnoJugador1) {
-
-                jl19.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
-                turnoJugador1 = false;
-
-            } else {
-
-                jl19.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
-                turnoJugador1 = true;
-
-            }
-
-        }
-
-        casilla = 10;
-        String marca = jl19.getText();
-        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
-    }//GEN-LAST:event_jl19MousePressed
-
-    private void jl20MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl20MousePressed
-        if (jl20.getText().isEmpty()) {
-
-            if (turnoJugador1) {
-
-                jl20.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
-                turnoJugador1 = false;
-
-            } else {
-
-                jl20.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
-                turnoJugador1 = true;
-
-            }
-
-        }
-
-        casilla = 11;
-        String marca = jl20.getText();
-        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
-    }//GEN-LAST:event_jl20MousePressed
-
-    private void jl21MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl21MousePressed
-        if (jl21.getText().isEmpty()) {
-
-            if (turnoJugador1) {
-
-                jl21.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
-                turnoJugador1 = false;
-
-            } else {
-
-                jl21.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
-                turnoJugador1 = true;
-
-            }
-
-        }
-
-        casilla = 12;
-        String marca = jl21.getText();
-        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
-    }//GEN-LAST:event_jl21MousePressed
-
-    private void jl22MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl22MousePressed
-        if (jl22.getText().isEmpty()) {
-
-            if (turnoJugador1) {
-
-                jl22.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
-                turnoJugador1 = false;
-
-            } else {
-
-                jl22.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
-                turnoJugador1 = true;
-
-            }
-
-        }
-
-        casilla = 13;
-        String marca = jl12.getText();
-        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
-    }//GEN-LAST:event_jl22MousePressed
-
-    private void jl23MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl23MousePressed
-        if (jl23.getText().isEmpty()) {
-
-            if (turnoJugador1) {
-
-                jl23.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
-                turnoJugador1 = false;
-
-            } else {
-
-                jl23.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
-                turnoJugador1 = true;
-
-            }
-
-        }
-
-        casilla = 14;
-        String marca = jl23.getText();
-        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
-    }//GEN-LAST:event_jl23MousePressed
-
-    private void jl24MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl24MousePressed
-        if (jl24.getText().isEmpty()) {
-
-            if (turnoJugador1) {
-
-                jl24.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
-                turnoJugador1 = false;
-
-            } else {
-
-                jl24.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
-                turnoJugador1 = true;
-
-            }
-
-        }
-
-        casilla = 15;
-        String marca = jl24.getText();
-        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
-    }//GEN-LAST:event_jl24MousePressed
-
-    private void jl25MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl25MousePressed
-        if (jl25.getText().isEmpty()) {
-
-            if (turnoJugador1) {
-
-                jl25.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
-                turnoJugador1 = false;
-
-            } else {
-
-                jl25.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
-                turnoJugador1 = true;
-
-            }
-
-        }
-
-        casilla = 16;
-        String marca = jl25.getText();
-        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
-    }//GEN-LAST:event_jl25MousePressed
-
-    private void jl14MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl14MousePressed
-
-        if (jl14.getText().isEmpty()) {
-
-            if (turnoJugador1) {
-
-                jl14.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
-                turnoJugador1 = false;
-
-            } else {
-
-                jl14.setText(tablero4x4.colocarFicha(turnoJugador1));
-                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
-                turnoJugador1 = true;
-
-            }
-        }
-
-        casilla = 13;
-        String marca = jl14.getText();
-        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
-    }//GEN-LAST:event_jl14MousePressed
-
     public Jugador getJugador1() {
-        return jugador1;
-    }
+    return jugador1;
+}
 
     public void setJugador1(Jugador jugador1) {
-        this.jugador1 = jugador1;
-    }
+    this.jugador1 = jugador1;
+}
 
     public Jugador getJugador2() {
-        return jugador2;
-    }
+    return jugador2;
+}
 
     public void setJugador2(Jugador jugador2) {
-        this.jugador2 = jugador2;
-    }
+    this.jugador2 = jugador2;
+}
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
