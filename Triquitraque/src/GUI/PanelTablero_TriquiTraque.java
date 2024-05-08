@@ -10,15 +10,15 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
     int puntajeJugador1 = 0;
     int puntajeJugador2 = 0;
 
-    String[][] tamaño = {
-        {"", "", ""},
-        {"", "", ""},
-        {"", "", ""}
-    };
+    String[][] matriz3x3 = new String[3][3];
+    String[][] matriz4x4 = new String[4][4];
+    String[][] matriz5x5 = new String[5][5];
 
+    Tablero tablero3x3 = new Tablero(matriz3x3, this);
+    Tablero tablero4x4 = new Tablero(matriz4x4, this);
+    Tablero tablero5x5 = new Tablero(matriz5x5, this);
     int casilla = 0;
     boolean turnoJugador1 = true;
-    Tablero tablero = new Tablero(tamaño, this);
 
     public PanelTablero_TriquiTraque(Jugador jugador1, Jugador jugador2, int tamañoTablero) {
         this.jugador1 = jugador1;
@@ -182,7 +182,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         jPanel2.add(lblCierre, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 30, -1));
 
         panelFondo.add(jPanel2);
-        jPanel2.setBounds(10, 20, 410, 220);
+        jPanel2.setBounds(10, 20, 410, 180);
 
         jTabbedPane1.setBackground(new java.awt.Color(240, 232, 216));
 
@@ -764,11 +764,11 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
         if (jl1.getText().isEmpty()) {
             if (turnoJugador1) {
-                jl1.setText(tablero.colocarFicha(turnoJugador1));
+                jl1.setText(tablero3x3.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl1);
                 turnoJugador1 = false;
             } else {
-                jl1.setText(tablero.colocarFicha(turnoJugador1));
+                jl1.setText(tablero3x3.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl1);
                 turnoJugador1 = true;
             }
@@ -777,7 +777,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         casilla = 1;
         String marca = jl1.getText();
 
-        tablero.finDelJuego(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+        tablero3x3.finDelJuego3x3(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
     }//GEN-LAST:event_jl1MousePressed
 
     private void jl2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl2MousePressed
@@ -786,13 +786,13 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
             if (turnoJugador1) {
 
-                jl2.setText(tablero.colocarFicha(turnoJugador1));
+                jl2.setText(tablero3x3.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl2);
                 turnoJugador1 = false;
 
             } else {
 
-                jl2.setText(tablero.colocarFicha(turnoJugador1));
+                jl2.setText(tablero3x3.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl2);
                 turnoJugador1 = true;
 
@@ -803,7 +803,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         casilla = 2;
         String marca = jl2.getText();
 
-        tablero.finDelJuego(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+        tablero3x3.finDelJuego3x3(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
 
     }//GEN-LAST:event_jl2MousePressed
 
@@ -813,13 +813,13 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
             if (turnoJugador1) {
 
-                jl3.setText(tablero.colocarFicha(turnoJugador1));
+                jl3.setText(tablero3x3.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl3);
                 turnoJugador1 = false;
 
             } else {
 
-                jl3.setText(tablero.colocarFicha(turnoJugador1));
+                jl3.setText(tablero3x3.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ1.getText(), lblNombreJ1, jl3);
                 turnoJugador1 = true;
 
@@ -830,7 +830,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         casilla = 3;
         String marca = jl3.getText();
 
-        tablero.finDelJuego(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+        tablero3x3.finDelJuego3x3(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
 
     }//GEN-LAST:event_jl3MousePressed
 
@@ -842,13 +842,13 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
             if (turnoJugador1) {
 
-                jl4.setText(tablero.colocarFicha(turnoJugador1));
+                jl4.setText(tablero3x3.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl4);
                 turnoJugador1 = false;
 
             } else {
 
-                jl4.setText(tablero.colocarFicha(turnoJugador1));
+                jl4.setText(tablero3x3.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl4);
                 turnoJugador1 = true;
 
@@ -859,7 +859,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         casilla = 4;
         String marca = jl4.getText();
 
-        tablero.finDelJuego(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+        tablero3x3.finDelJuego3x3(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
 
     }//GEN-LAST:event_jl4MousePressed
 
@@ -869,13 +869,13 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
             if (turnoJugador1) {
 
-                jl5.setText(tablero.colocarFicha(turnoJugador1));
+                jl5.setText(tablero3x3.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl5);
                 turnoJugador1 = false;
 
             } else {
 
-                jl5.setText(tablero.colocarFicha(turnoJugador1));
+                jl5.setText(tablero3x3.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl5);
                 turnoJugador1 = true;
 
@@ -886,7 +886,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         casilla = 5;
         String marca = jl5.getText();
 
-        tablero.finDelJuego(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+        tablero3x3.finDelJuego3x3(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
 
     }//GEN-LAST:event_jl5MousePressed
 
@@ -896,13 +896,13 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
             if (turnoJugador1) {
 
-                jl6.setText(tablero.colocarFicha(turnoJugador1));
+                jl6.setText(tablero3x3.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ2, jl6);
                 turnoJugador1 = false;
 
             } else {
 
-                jl6.setText(tablero.colocarFicha(turnoJugador1));
+                jl6.setText(tablero3x3.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl6);
                 turnoJugador1 = true;
 
@@ -913,7 +913,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         casilla = 6;
         String marca = jl6.getText();
 
-        tablero.finDelJuego(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+        tablero3x3.finDelJuego3x3(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
 
     }//GEN-LAST:event_jl6MousePressed
 
@@ -923,13 +923,13 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
             if (turnoJugador1) {
 
-                jl7.setText(tablero.colocarFicha(turnoJugador1));
+                jl7.setText(tablero3x3.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ2, jl7);
                 turnoJugador1 = false;
 
             } else {
 
-                jl7.setText(tablero.colocarFicha(turnoJugador1));
+                jl7.setText(tablero3x3.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl7);
                 turnoJugador1 = true;
 
@@ -940,7 +940,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         casilla = 7;
         String marca = jl7.getText();
 
-        tablero.finDelJuego(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+        tablero3x3.finDelJuego3x3(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
 
     }//GEN-LAST:event_jl7MousePressed
 
@@ -950,13 +950,13 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
             if (turnoJugador1) {
 
-                jl8.setText(tablero.colocarFicha(turnoJugador1));
+                jl8.setText(tablero3x3.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ2, jl8);
                 turnoJugador1 = false;
 
             } else {
 
-                jl8.setText(tablero.colocarFicha(turnoJugador1));
+                jl8.setText(tablero3x3.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl8);
                 turnoJugador1 = true;
 
@@ -967,7 +967,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         casilla = 8;
         String marca = jl8.getText();
 
-        tablero.finDelJuego(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+        tablero3x3.finDelJuego3x3(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
 
     }//GEN-LAST:event_jl8MousePressed
 
@@ -977,13 +977,13 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
             if (turnoJugador1) {
 
-                jl9.setText(tablero.colocarFicha(turnoJugador1));
+                jl9.setText(tablero3x3.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl9);
                 turnoJugador1 = false;
 
             } else {
 
-                jl9.setText(tablero.colocarFicha(turnoJugador1));
+                jl9.setText(tablero3x3.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl9);
                 turnoJugador1 = true;
 
@@ -994,7 +994,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         casilla = 9;
         String marca = jl9.getText();
 
-        tablero.finDelJuego(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+        tablero3x3.finDelJuego3x3(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
 
     }//GEN-LAST:event_jl9MousePressed
 
@@ -1004,19 +1004,24 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
             if (turnoJugador1) {
 
-                jl10.setText(tablero.colocarFicha(turnoJugador1));
+                jl10.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl10);
                 turnoJugador1 = false;
 
             } else {
 
-                jl10.setText(tablero.colocarFicha(turnoJugador1));
+                jl10.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl10);
                 turnoJugador1 = true;
 
             }
 
         }
+
+        casilla = 1;
+        String marca = jl10.getText();
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+
 
     }//GEN-LAST:event_jl10MousePressed
 
@@ -1026,20 +1031,23 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
             if (turnoJugador1) {
 
-                jl11.setText(tablero.colocarFicha(turnoJugador1));
+                jl11.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl11);
                 turnoJugador1 = false;
 
             } else {
 
-                jl11.setText(tablero.colocarFicha(turnoJugador1));
-                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ1, jl11);
+                jl11.setText(tablero4x4.colocarFicha(turnoJugador1));
+                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl11);
                 turnoJugador1 = true;
 
             }
 
         }
 
+        casilla = 2;
+        String marca = jl11.getText();
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
     }//GEN-LAST:event_jl11MousePressed
 
     private void jl12MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl12MousePressed
@@ -1048,13 +1056,13 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
             if (turnoJugador1) {
 
-                jl12.setText(tablero.colocarFicha(turnoJugador1));
+                jl12.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
             } else {
 
-                jl12.setText(tablero.colocarFicha(turnoJugador1));
+                jl12.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
                 turnoJugador1 = true;
 
@@ -1062,6 +1070,9 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
         }
 
+        casilla = 3;
+        String marca = jl12.getText();
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
     }//GEN-LAST:event_jl12MousePressed
 
     private void jl13MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl13MousePressed
@@ -1070,40 +1081,25 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
             if (turnoJugador1) {
 
-                jl13.setText(tablero.colocarFicha(turnoJugador1));
+                jl13.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
             } else {
 
-                jl13.setText(tablero.colocarFicha(turnoJugador1));
+                jl13.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
                 turnoJugador1 = true;
 
             }
 
         }
+
+        casilla = 4;
+        String marca = jl13.getText();
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+
     }//GEN-LAST:event_jl13MousePressed
-
-    private void jl14MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl14MousePressed
-
-        if (jl14.getText().isEmpty()) {
-
-            if (turnoJugador1) {
-
-                jl14.setText(tablero.colocarFicha(turnoJugador1));
-                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
-                turnoJugador1 = false;
-
-            } else {
-
-                jl14.setText(tablero.colocarFicha(turnoJugador1));
-                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
-                turnoJugador1 = true;
-
-            }
-
-        }    }//GEN-LAST:event_jl14MousePressed
 
     private void jl15MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl15MousePressed
 
@@ -1111,19 +1107,22 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
             if (turnoJugador1) {
 
-                jl15.setText(tablero.colocarFicha(turnoJugador1));
+                jl15.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
             } else {
 
-                jl15.setText(tablero.colocarFicha(turnoJugador1));
+                jl15.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
                 turnoJugador1 = true;
 
             }
 
         }
+        casilla = 6;
+        String marca = jl15.getText();
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
     }//GEN-LAST:event_jl15MousePressed
 
     private void jl16MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl16MousePressed
@@ -1132,19 +1131,23 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
             if (turnoJugador1) {
 
-                jl16.setText(tablero.colocarFicha(turnoJugador1));
+                jl16.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
             } else {
 
-                jl16.setText(tablero.colocarFicha(turnoJugador1));
+                jl16.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
                 turnoJugador1 = true;
 
             }
 
         }
+
+        casilla = 7;
+        String marca = jl16.getText();
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
     }//GEN-LAST:event_jl16MousePressed
 
     private void jl17MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl17MousePressed
@@ -1153,19 +1156,23 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
             if (turnoJugador1) {
 
-                jl17.setText(tablero.colocarFicha(turnoJugador1));
+                jl17.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
             } else {
 
-                jl17.setText(tablero.colocarFicha(turnoJugador1));
+                jl17.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
                 turnoJugador1 = true;
 
             }
 
         }
+
+        casilla = 8;
+        String marca = jl17.getText();
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
     }//GEN-LAST:event_jl17MousePressed
 
     private void jl18MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl18MousePressed
@@ -1174,19 +1181,22 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
             if (turnoJugador1) {
 
-                jl18.setText(tablero.colocarFicha(turnoJugador1));
+                jl18.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
             } else {
 
-                jl18.setText(tablero.colocarFicha(turnoJugador1));
+                jl18.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
                 turnoJugador1 = true;
 
             }
-
         }
+
+        casilla = 9;
+        String marca = jl18.getText();
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
     }//GEN-LAST:event_jl18MousePressed
 
     private void jl19MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl19MousePressed
@@ -1195,19 +1205,23 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
             if (turnoJugador1) {
 
-                jl19.setText(tablero.colocarFicha(turnoJugador1));
+                jl19.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
             } else {
 
-                jl19.setText(tablero.colocarFicha(turnoJugador1));
+                jl19.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
                 turnoJugador1 = true;
 
             }
 
         }
+
+        casilla = 10;
+        String marca = jl19.getText();
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
     }//GEN-LAST:event_jl19MousePressed
 
     private void jl20MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl20MousePressed
@@ -1215,19 +1229,23 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
             if (turnoJugador1) {
 
-                jl20.setText(tablero.colocarFicha(turnoJugador1));
+                jl20.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
             } else {
 
-                jl20.setText(tablero.colocarFicha(turnoJugador1));
+                jl20.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
                 turnoJugador1 = true;
 
             }
 
         }
+
+        casilla = 11;
+        String marca = jl20.getText();
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
     }//GEN-LAST:event_jl20MousePressed
 
     private void jl21MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl21MousePressed
@@ -1235,19 +1253,23 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
             if (turnoJugador1) {
 
-                jl21.setText(tablero.colocarFicha(turnoJugador1));
+                jl21.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
             } else {
 
-                jl21.setText(tablero.colocarFicha(turnoJugador1));
+                jl21.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
                 turnoJugador1 = true;
 
             }
 
         }
+
+        casilla = 12;
+        String marca = jl21.getText();
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
     }//GEN-LAST:event_jl21MousePressed
 
     private void jl22MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl22MousePressed
@@ -1255,19 +1277,23 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
             if (turnoJugador1) {
 
-                jl22.setText(tablero.colocarFicha(turnoJugador1));
+                jl22.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
             } else {
 
-                jl22.setText(tablero.colocarFicha(turnoJugador1));
+                jl22.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
                 turnoJugador1 = true;
 
             }
 
         }
+
+        casilla = 13;
+        String marca = jl12.getText();
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
     }//GEN-LAST:event_jl22MousePressed
 
     private void jl23MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl23MousePressed
@@ -1275,19 +1301,23 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
             if (turnoJugador1) {
 
-                jl23.setText(tablero.colocarFicha(turnoJugador1));
+                jl23.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
             } else {
 
-                jl23.setText(tablero.colocarFicha(turnoJugador1));
+                jl23.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
                 turnoJugador1 = true;
 
             }
 
         }
+
+        casilla = 14;
+        String marca = jl23.getText();
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
     }//GEN-LAST:event_jl23MousePressed
 
     private void jl24MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl24MousePressed
@@ -1295,19 +1325,23 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
             if (turnoJugador1) {
 
-                jl24.setText(tablero.colocarFicha(turnoJugador1));
+                jl24.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
             } else {
 
-                jl24.setText(tablero.colocarFicha(turnoJugador1));
+                jl24.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
                 turnoJugador1 = true;
 
             }
 
         }
+
+        casilla = 15;
+        String marca = jl24.getText();
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
     }//GEN-LAST:event_jl24MousePressed
 
     private void jl25MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl25MousePressed
@@ -1315,20 +1349,48 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
             if (turnoJugador1) {
 
-                jl25.setText(tablero.colocarFicha(turnoJugador1));
+                jl25.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
             } else {
 
-                jl25.setText(tablero.colocarFicha(turnoJugador1));
+                jl25.setText(tablero4x4.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
                 turnoJugador1 = true;
 
             }
 
         }
+
+        casilla = 16;
+        String marca = jl25.getText();
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
     }//GEN-LAST:event_jl25MousePressed
+
+    private void jl14MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl14MousePressed
+
+        if (jl14.getText().isEmpty()) {
+
+            if (turnoJugador1) {
+
+                jl14.setText(tablero4x4.colocarFicha(turnoJugador1));
+                jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
+                turnoJugador1 = false;
+
+            } else {
+
+                jl14.setText(tablero4x4.colocarFicha(turnoJugador1));
+                jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
+                turnoJugador1 = true;
+
+            }
+        }
+
+        casilla = 13;
+        String marca = jl14.getText();
+        tablero4x4.finDelJuego4x4(casilla, marca, turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
+    }//GEN-LAST:event_jl14MousePressed
 
     public Jugador getJugador1() {
         return jugador1;
