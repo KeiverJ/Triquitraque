@@ -6,7 +6,11 @@
 package GUI;
 
 import java.awt.Color;
+import java.util.Enumeration;
+import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
+import javax.swing.JTabbedPane;
 import javax.swing.border.Border;
 
 /**
@@ -14,6 +18,7 @@ import javax.swing.border.Border;
  * @author keive
  */
 public class PanelMain_Triquitraque extends javax.swing.JFrame {
+    
     /** Creates new form PanelMain_Triquitraque */
     public PanelMain_Triquitraque() {
         setUndecorated(true);
@@ -26,6 +31,26 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
         Border bordeBoton = BorderFactory.createLineBorder(new Color(0,0,0),0);
         panelBoton.setBorder(bordeBoton);
     }
+    
+    public void setNombreJugador1(String nombre) {
+        txtJugador1.setText(nombre);
+    }
+
+    // Método para establecer el nombre del Jugador 2
+    public void setNombreJugador2(String nombre) {
+        txtJugador2.setText(nombre);
+    }
+
+    // Método para establecer el color del Jugador 1
+    public void setColorJugador1(Color color) {
+        txtJugador1.setForeground(color);
+    }
+
+    // Método para establecer el color del Jugador 2
+    public void setColorJugador2(Color color) {
+        txtJugador1.setForeground(color);
+    }
+    
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -329,21 +354,35 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
 
     private void lblInicarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInicarMousePressed
         this.dispose();
-        
+
         Jugador jugador1 = new Jugador();
-        if(txtJugador1.getText().equals(""))
-            jugador1.setNombre("JUGADOR1");
+        if (txtJugador1.getText().equals(""))
+            jugador1.setNombre("Jugador 1");
         else
             jugador1.setNombre(txtJugador1.getText());
-        
+
         Jugador jugador2 = new Jugador();
-        if(txtJugador2.getText().equals(""))
-            jugador2.setNombre("JUGADOR2");
+        if (txtJugador2.getText().equals(""))
+            jugador2.setNombre("Jugador 2");
         else
             jugador2.setNombre(txtJugador2.getText());
+
+        int tamañoTablero = 0;
+        if (rbt3x3.isSelected()) {
+            tamañoTablero = 3;
+        } else if (rbt4x4.isSelected()) {
+            tamañoTablero = 4;
+        } else if (rbt5x5.isSelected()) {
+            tamañoTablero = 5;
+        }
+
+        if (!txtJugador1.getText().isEmpty() && !txtJugador2.getText().isEmpty() && tamañoTablero != 0) {
+            PanelTablero_TriquiTraque TriquiTraque = new PanelTablero_TriquiTraque(jugador1, jugador2, tamañoTablero);
+            TriquiTraque.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Faltan campos por llenar.", "Alerta", JOptionPane.WARNING_MESSAGE);
+        }
         
-        PanelTablero_TriquiTraque tikTacToe = new PanelTablero_TriquiTraque(jugador1,jugador2);
-        tikTacToe.setVisible(true);
     }//GEN-LAST:event_lblInicarMousePressed
 
     private void lblInicarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInicarMouseEntered

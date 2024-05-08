@@ -51,7 +51,7 @@ public class Jugador {
         this.color = color;
     }
     
-    public void configurarJugador(Jugador jugador, String nombre, String colorSeleccionado, JLabel labelNombre, JLabel labelFicha) {
+    public void configurarJugador(Jugador jugador, String nombre, JLabel labelNombre, JLabel labelFicha) {
         
         if (nombre.isEmpty()) {
             
@@ -63,7 +63,7 @@ public class Jugador {
             
             jugador.setNombre(nombre);
             
-            Color colorLabel = jugador.configurarColorJugador(colorSeleccionado);
+            Color colorLabel = color.BLACK;
             
             labelFicha.setForeground(colorLabel);
             labelNombre.setText(jugador.getNombre());
