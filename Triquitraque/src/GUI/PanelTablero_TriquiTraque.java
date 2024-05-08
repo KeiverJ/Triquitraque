@@ -7,6 +7,8 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
     Jugador jugador1 = new Jugador("", "X", Color.BLACK);
     Jugador jugador2 = new Jugador("", "O", Color.BLACK);
+    int puntajeJugador1 = 0;
+    int puntajeJugador2 = 0;
 
     String[][] tamaño = {
         {"", "", ""},
@@ -16,8 +18,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
     int casilla = 0;
     boolean turnoJugador1 = true;
-    Tablero tablero = new Tablero(tamaño);
-
+    Tablero tablero = new Tablero(tamaño, this);
 
     public PanelTablero_TriquiTraque(Jugador jugador1, Jugador jugador2, int tamañoTablero) {
         this.jugador1 = jugador1;
@@ -31,9 +32,6 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
         lblNombreJ1.setText(jugador1.getNombre());
         lblNombreJ2.setText(jugador2.getNombre());
-        
-                
-
 
         init(tamañoTablero);
     }
@@ -52,6 +50,20 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
             default:
                 break;
         }
+    }
+
+    private void actualizarPuntaje() {
+        lblPuntajeJ1.setText(Integer.toString(puntajeJugador1));
+        lblPuntajeJ2.setText(Integer.toString(puntajeJugador2));
+    }
+
+    void manejarFinDelJuego(String ganador) {
+        if (ganador.equals(jugador1.getNombre())) {
+            puntajeJugador1++;
+        } else if (ganador.equals(jugador2.getNombre())) {
+            puntajeJugador2++;
+        }
+        actualizarPuntaje();
     }
 
     @SuppressWarnings("unchecked")
@@ -170,7 +182,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         jPanel2.add(lblCierre, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 30, -1));
 
         panelFondo.add(jPanel2);
-        jPanel2.setBounds(10, 20, 410, 170);
+        jPanel2.setBounds(10, 20, 410, 220);
 
         jTabbedPane1.setBackground(new java.awt.Color(240, 232, 216));
 
@@ -748,9 +760,9 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
     }//GEN-LAST:event_lblCierreMouseExited
 
     private void jl1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl1MousePressed
-    boolean uno = true;
+        boolean uno = true;
 
-    if (jl1.getText().isEmpty()) {
+        if (jl1.getText().isEmpty()) {
             if (turnoJugador1) {
                 jl1.setText(tablero.colocarFicha(turnoJugador1));
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl1);
@@ -996,9 +1008,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl10);
                 turnoJugador1 = false;
 
-            }
-
-            else {
+            } else {
 
                 jl10.setText(tablero.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl10);
@@ -1020,9 +1030,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl11);
                 turnoJugador1 = false;
 
-            }
-
-            else {
+            } else {
 
                 jl11.setText(tablero.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ1, jl11);
@@ -1044,9 +1052,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
-            }
-
-            else {
+            } else {
 
                 jl12.setText(tablero.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
@@ -1059,7 +1065,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
     }//GEN-LAST:event_jl12MousePressed
 
     private void jl13MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl13MousePressed
-        
+
         if (jl13.getText().isEmpty()) {
 
             if (turnoJugador1) {
@@ -1068,9 +1074,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
-            }
-
-            else {
+            } else {
 
                 jl13.setText(tablero.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
@@ -1091,9 +1095,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
-            }
-
-            else {
+            } else {
 
                 jl14.setText(tablero.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
@@ -1104,7 +1106,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         }    }//GEN-LAST:event_jl14MousePressed
 
     private void jl15MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl15MousePressed
-       
+
         if (jl15.getText().isEmpty()) {
 
             if (turnoJugador1) {
@@ -1113,9 +1115,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
-            }
-
-            else {
+            } else {
 
                 jl15.setText(tablero.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
@@ -1127,7 +1127,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
     }//GEN-LAST:event_jl15MousePressed
 
     private void jl16MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl16MousePressed
-        
+
         if (jl16.getText().isEmpty()) {
 
             if (turnoJugador1) {
@@ -1136,9 +1136,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
-            }
-
-            else {
+            } else {
 
                 jl16.setText(tablero.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
@@ -1150,7 +1148,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
     }//GEN-LAST:event_jl16MousePressed
 
     private void jl17MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl17MousePressed
-        
+
         if (jl17.getText().isEmpty()) {
 
             if (turnoJugador1) {
@@ -1159,9 +1157,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
-            }
-
-            else {
+            } else {
 
                 jl17.setText(tablero.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
@@ -1173,7 +1169,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
     }//GEN-LAST:event_jl17MousePressed
 
     private void jl18MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl18MousePressed
-        
+
         if (jl18.getText().isEmpty()) {
 
             if (turnoJugador1) {
@@ -1182,9 +1178,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
-            }
-
-            else {
+            } else {
 
                 jl18.setText(tablero.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
@@ -1196,7 +1190,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
     }//GEN-LAST:event_jl18MousePressed
 
     private void jl19MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl19MousePressed
-       
+
         if (jl19.getText().isEmpty()) {
 
             if (turnoJugador1) {
@@ -1205,9 +1199,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
-            }
-
-            else {
+            } else {
 
                 jl19.setText(tablero.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
@@ -1227,9 +1219,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
-            }
-
-            else {
+            } else {
 
                 jl20.setText(tablero.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
@@ -1249,9 +1239,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
-            }
-
-            else {
+            } else {
 
                 jl21.setText(tablero.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
@@ -1263,7 +1251,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
     }//GEN-LAST:event_jl21MousePressed
 
     private void jl22MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl22MousePressed
-    if (jl22.getText().isEmpty()) {
+        if (jl22.getText().isEmpty()) {
 
             if (turnoJugador1) {
 
@@ -1271,9 +1259,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
-            }
-
-            else {
+            } else {
 
                 jl22.setText(tablero.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
@@ -1285,7 +1271,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
     }//GEN-LAST:event_jl22MousePressed
 
     private void jl23MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl23MousePressed
-    if (jl23.getText().isEmpty()) {
+        if (jl23.getText().isEmpty()) {
 
             if (turnoJugador1) {
 
@@ -1293,9 +1279,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
-            }
-
-            else {
+            } else {
 
                 jl23.setText(tablero.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
@@ -1307,7 +1291,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
     }//GEN-LAST:event_jl23MousePressed
 
     private void jl24MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl24MousePressed
-    if (jl24.getText().isEmpty()) {
+        if (jl24.getText().isEmpty()) {
 
             if (turnoJugador1) {
 
@@ -1315,9 +1299,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
-            }
-
-            else {
+            } else {
 
                 jl24.setText(tablero.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);
@@ -1329,7 +1311,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
     }//GEN-LAST:event_jl24MousePressed
 
     private void jl25MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl25MousePressed
-    if (jl25.getText().isEmpty()) {
+        if (jl25.getText().isEmpty()) {
 
             if (turnoJugador1) {
 
@@ -1337,9 +1319,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
                 jugador1.configurarJugador(jugador1, lblNombreJ1.getText(), lblNombreJ1, jl12);
                 turnoJugador1 = false;
 
-            }
-
-            else {
+            } else {
 
                 jl25.setText(tablero.colocarFicha(turnoJugador1));
                 jugador2.configurarJugador(jugador2, lblNombreJ2.getText(), lblNombreJ2, jl12);

@@ -14,12 +14,14 @@ import javax.swing.JOptionPane;
 public class Tablero {
 
     private String[][] tablero;
+    private PanelTablero_TriquiTraque panelTablero;
 
     public Tablero() {
     }
 
-    public Tablero(String[][] tablero) {
+    public Tablero(String[][] tablero, PanelTablero_TriquiTraque panelTablero) {
         this.tablero = new String[3][3];
+        this.panelTablero = panelTablero;
     }
 
     public String[][] getTablero() {
@@ -95,6 +97,7 @@ public class Tablero {
                 nombreGanador = nombreJ1;
             }
             JOptionPane.showMessageDialog(null, "¡El jugador " + nombreGanador + " es el ganador!", "Ganador", JOptionPane.WARNING_MESSAGE);
+            panelTablero.manejarFinDelJuego(nombreGanador);
         } else if (empate) {
             JOptionPane.showMessageDialog(null, "El juego ha terminado en empate", "Fin el juego", JOptionPane.WARNING_MESSAGE);
         }
