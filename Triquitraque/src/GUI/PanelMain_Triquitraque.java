@@ -5,8 +5,6 @@
 package GUI;
 
 import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.border.Border;
@@ -58,6 +56,7 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
     private void initComponents() {
 
         rbtTamañoTablero = new javax.swing.ButtonGroup();
+        jLabel5 = new javax.swing.JLabel();
         panelFondo = new diseño.PanelRedondeado();
         lblCierre = new javax.swing.JLabel();
         lblTamaño = new javax.swing.JLabel();
@@ -65,16 +64,18 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
         txtJugador1 = new javax.swing.JTextField();
         panelBoton = new javax.swing.JPanel();
         lblInicar = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         rbt5x5 = new javax.swing.JRadioButton();
         rbt3x3 = new javax.swing.JRadioButton();
         rbt4x4 = new javax.swing.JRadioButton();
         lblTitulo = new javax.swing.JLabel();
         cbColorJ2 = new javax.swing.JComboBox<>();
         cbColorJ1 = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/x.png"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -210,24 +211,6 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
         panelFondo.add(panelBoton);
         panelBoton.setBounds(140, 280, 160, 50);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/x.png"))); // NOI18N
-        jLabel3.setPreferredSize(new java.awt.Dimension(36, 36));
-        panelFondo.add(jLabel3);
-        jLabel3.setBounds(320, 100, 32, 32);
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/iconopersona.png"))); // NOI18N
-        panelFondo.add(jLabel5);
-        jLabel5.setBounds(30, 160, 40, 40);
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/iconopersona.png"))); // NOI18N
-        panelFondo.add(jLabel4);
-        jLabel4.setBounds(30, 100, 40, 40);
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/circulo.png"))); // NOI18N
-        jLabel6.setPreferredSize(new java.awt.Dimension(36, 36));
-        panelFondo.add(jLabel6);
-        jLabel6.setBounds(320, 160, 40, 40);
-
         rbtTamañoTablero.add(rbt5x5);
         rbt5x5.setForeground(new java.awt.Color(0, 0, 0));
         rbt5x5.setText("5x5");
@@ -237,11 +220,6 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
         rbtTamañoTablero.add(rbt3x3);
         rbt3x3.setForeground(new java.awt.Color(0, 0, 0));
         rbt3x3.setText("3x3");
-        rbt3x3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                rbt3x3MouseClicked(evt);
-            }
-        });
         panelFondo.add(rbt3x3);
         rbt3x3.setBounds(240, 230, 41, 21);
 
@@ -258,13 +236,29 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
         panelFondo.add(lblTitulo);
         lblTitulo.setBounds(0, 30, 420, 42);
 
-        cbColorJ2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Azul", "Rojo", "Amarillo", "Negro", "Verde", "Rosado" }));
+        cbColorJ2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Negro", "Azul", "Rojo", "Amarillo", "Verde", "Rosado", "Blanco", "Gris", "Naranja", "Marrón", "Turquesa", "Coral", "Morado", " " }));
         panelFondo.add(cbColorJ2);
-        cbColorJ2.setBounds(370, 170, 79, 22);
+        cbColorJ2.setBounds(370, 170, 82, 22);
 
-        cbColorJ1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Azul", "Rojo", "Amarillo", "Negro", "Verde", "Rosado" }));
+        cbColorJ1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Negro", "Azul", "Rojo", "Amarillo", "Verde", "Rosado", "Blanco", "Gris", "Naranja", "Marrón", "Turquesa", "Coral", "Morado" }));
         panelFondo.add(cbColorJ1);
-        cbColorJ1.setBounds(370, 100, 79, 22);
+        cbColorJ1.setBounds(370, 100, 82, 22);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/circulo.png"))); // NOI18N
+        panelFondo.add(jLabel1);
+        jLabel1.setBounds(320, 160, 40, 40);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/iconopersona.png"))); // NOI18N
+        panelFondo.add(jLabel2);
+        jLabel2.setBounds(30, 100, 40, 40);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/iconopersona.png"))); // NOI18N
+        panelFondo.add(jLabel4);
+        jLabel4.setBounds(30, 160, 40, 40);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/x.png"))); // NOI18N
+        panelFondo.add(jLabel6);
+        jLabel6.setBounds(320, 100, 40, 40);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -280,72 +274,6 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void lblCierreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCierreMouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_lblCierreMouseClicked
-
-    private void lblCierreMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCierreMouseEntered
-        lblCierre.setForeground(Color.RED);
-    }//GEN-LAST:event_lblCierreMouseEntered
-
-    private void lblCierreMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCierreMouseExited
-        lblCierre.setForeground(new Color(0, 0, 0));
-    }//GEN-LAST:event_lblCierreMouseExited
-
-    private void txtJugador2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtJugador2FocusGained
-        if (txtJugador2.getText().equals("Jugador 2"))
-            txtJugador2.setText("");
-    }//GEN-LAST:event_txtJugador2FocusGained
-
-    private void txtJugador2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtJugador2FocusLost
-        if (txtJugador2.getText().equals(""))
-            txtJugador2.setText("Jugador 2");
-    }//GEN-LAST:event_txtJugador2FocusLost
-
-    private void txtJugador2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtJugador2MouseEntered
-        Border borde = BorderFactory.createLineBorder(new Color(137, 169, 192), 2);
-        txtJugador2.setBorder(borde);
-    }//GEN-LAST:event_txtJugador2MouseEntered
-
-    private void txtJugador2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtJugador2MouseExited
-        txtJugador2.setBorder(null);
-    }//GEN-LAST:event_txtJugador2MouseExited
-
-    private void txtJugador2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtJugador2KeyTyped
-        char caracter = Character.toLowerCase(evt.getKeyChar());
-        evt.setKeyChar(caracter);
-        if (txtJugador2.getText().length() >= 10)
-            evt.consume();
-    }//GEN-LAST:event_txtJugador2KeyTyped
-
-    private void txtJugador1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtJugador1FocusGained
-        if (txtJugador1.getText().equals("Jugador 1"))
-            txtJugador1.setText("");
-    }//GEN-LAST:event_txtJugador1FocusGained
-
-    private void txtJugador1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtJugador1FocusLost
-        if (txtJugador1.getText().equals(""))
-            txtJugador1.setText("Jugador 1");
-    }//GEN-LAST:event_txtJugador1FocusLost
-
-    private void txtJugador1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtJugador1MouseEntered
-        Border borde = BorderFactory.createLineBorder(new Color(230, 167, 136), 2);
-        txtJugador1.setBorder(borde);
-    }//GEN-LAST:event_txtJugador1MouseEntered
-
-    private void txtJugador1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtJugador1MouseExited
-        txtJugador1.setBorder(null);
-    }//GEN-LAST:event_txtJugador1MouseExited
-
-    private void txtJugador1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtJugador1KeyTyped
-        char caracter = Character.toLowerCase(evt.getKeyChar());
-        evt.setKeyChar(caracter);
-        if (txtJugador1.getText().length() >= 10) {
-            evt.consume();
-        }
-
-    }//GEN-LAST:event_txtJugador1KeyTyped
-
     private void panelFondoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelFondoMousePressed
         panelFondo.requestFocus();
     }//GEN-LAST:event_panelFondoMousePressed
@@ -359,7 +287,7 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
         } else {
             jugador1.setNombre(txtJugador1.getText());
         }
-        String colorSeleccionadoJ1 = (String) cbColorJ1.getSelectedItem(); // Obtener color seleccionado para jugador 1
+        String colorSeleccionadoJ1 = (String) cbColorJ1.getSelectedItem(); 
 
         Jugador jugador2 = new Jugador();
         if (txtJugador2.getText().equals("")) {
@@ -367,8 +295,7 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
         } else {
             jugador2.setNombre(txtJugador2.getText());
         }
-        String colorSeleccionadoJ2 = (String) cbColorJ2.getSelectedItem(); // Obtener color seleccionado para jugador 2
-
+        String colorSeleccionadoJ2 = (String) cbColorJ2.getSelectedItem(); 
         int tamañoTablero = 0;
         if (rbt3x3.isSelected()) {
             tamañoTablero = 3;
@@ -386,17 +313,78 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_lblInicarMousePressed
 
-    private void lblInicarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInicarMouseEntered
-        panelBoton.setBackground(new Color(237, 211, 185));
-    }//GEN-LAST:event_lblInicarMouseEntered
-
     private void lblInicarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInicarMouseExited
         panelBoton.setBackground(new Color(217, 176, 143));
     }//GEN-LAST:event_lblInicarMouseExited
 
-    private void rbt3x3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbt3x3MouseClicked
+    private void lblInicarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInicarMouseEntered
+        panelBoton.setBackground(new Color(237, 211, 185));
+    }//GEN-LAST:event_lblInicarMouseEntered
 
-    }//GEN-LAST:event_rbt3x3MouseClicked
+    private void txtJugador1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtJugador1KeyTyped
+        char caracter = Character.toLowerCase(evt.getKeyChar());
+        evt.setKeyChar(caracter);
+        if (txtJugador1.getText().length() >= 10) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtJugador1KeyTyped
+
+    private void txtJugador1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtJugador1MouseExited
+        txtJugador1.setBorder(null);
+    }//GEN-LAST:event_txtJugador1MouseExited
+
+    private void txtJugador1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtJugador1MouseEntered
+        Border borde = BorderFactory.createLineBorder(new Color(230, 167, 136), 2);
+        txtJugador1.setBorder(borde);
+    }//GEN-LAST:event_txtJugador1MouseEntered
+
+    private void txtJugador1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtJugador1FocusLost
+        if (txtJugador1.getText().equals(""))
+        txtJugador1.setText("Jugador 1");
+    }//GEN-LAST:event_txtJugador1FocusLost
+
+    private void txtJugador1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtJugador1FocusGained
+        if (txtJugador1.getText().equals("Jugador 1"))
+        txtJugador1.setText("");
+    }//GEN-LAST:event_txtJugador1FocusGained
+
+    private void txtJugador2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtJugador2KeyTyped
+        char caracter = Character.toLowerCase(evt.getKeyChar());
+        evt.setKeyChar(caracter);
+        if (txtJugador2.getText().length() >= 10)
+        evt.consume();
+    }//GEN-LAST:event_txtJugador2KeyTyped
+
+    private void txtJugador2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtJugador2MouseExited
+        txtJugador2.setBorder(null);
+    }//GEN-LAST:event_txtJugador2MouseExited
+
+    private void txtJugador2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtJugador2MouseEntered
+        Border borde = BorderFactory.createLineBorder(new Color(137, 169, 192), 2);
+        txtJugador2.setBorder(borde);
+    }//GEN-LAST:event_txtJugador2MouseEntered
+
+    private void txtJugador2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtJugador2FocusLost
+        if (txtJugador2.getText().equals(""))
+        txtJugador2.setText("Jugador 2");
+    }//GEN-LAST:event_txtJugador2FocusLost
+
+    private void txtJugador2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtJugador2FocusGained
+        if (txtJugador2.getText().equals("Jugador 2"))
+        txtJugador2.setText("");
+    }//GEN-LAST:event_txtJugador2FocusGained
+
+    private void lblCierreMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCierreMouseExited
+        lblCierre.setForeground(new Color(0, 0, 0));
+    }//GEN-LAST:event_lblCierreMouseExited
+
+    private void lblCierreMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCierreMouseEntered
+        lblCierre.setForeground(Color.RED);
+    }//GEN-LAST:event_lblCierreMouseEntered
+
+    private void lblCierreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCierreMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_lblCierreMouseClicked
 
     /**
      * @param args the command line arguments
@@ -436,7 +424,8 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cbColorJ1;
     private javax.swing.JComboBox<String> cbColorJ2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

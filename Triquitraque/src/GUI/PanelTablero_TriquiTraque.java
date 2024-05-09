@@ -53,15 +53,15 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
     private void crearTablero(int filas, int columnas, JPanel panel, Color colorJugador1, Color colorJugador2) {
 
-        panel.setLayout(new GridLayout(filas, columnas));
-
         labelsCasillas = new JLabel[filas * columnas];
+
+        panel.setLayout(new GridLayout(filas, columnas));
 
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
                 JLabel label = new JLabel("");
                 label.setName("casilla_" + (i * columnas + j + 1));
-                label.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+                label.setBorder(BorderFactory.createLineBorder(Color.GRAY));
                 label.setHorizontalAlignment(SwingConstants.CENTER);
                 label.setFont(new Font("Arial", Font.BOLD, 44));
                 label.addMouseListener(new MouseAdapter() {
@@ -95,6 +95,12 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
                 labelsCasillas[i * columnas + j] = label;
                 panel.add(label);
             }
+        }
+    }
+
+    public void limpiarTablero() {
+        for (JLabel label : labelsCasillas) {
+            label.setText("");
         }
     }
 
@@ -152,6 +158,10 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jPanel5x5 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
+        panelBoton = new javax.swing.JPanel();
+        lblNuevaPartida = new javax.swing.JLabel();
+        panelBoton1 = new javax.swing.JPanel();
+        lblSalir = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -199,22 +209,22 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(245, 209, 153));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("-");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 20, 60));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 20, 60));
 
         lblPuntajeJ2.setFont(new java.awt.Font("Montserrat", 1, 36)); // NOI18N
         lblPuntajeJ2.setForeground(new java.awt.Color(245, 209, 153));
         lblPuntajeJ2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPuntajeJ2.setText("0");
-        jPanel2.add(lblPuntajeJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 60, 60));
+        jPanel2.add(lblPuntajeJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 60, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgs/iconopersona.png"))); // NOI18N
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 50, 60));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 40, 60));
 
         lblNombreJ2.setFont(new java.awt.Font("Montserrat", 1, 14)); // NOI18N
         lblNombreJ2.setForeground(new java.awt.Color(255, 170, 92));
         lblNombreJ2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNombreJ2.setText("NAME");
-        jPanel2.add(lblNombreJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 100, 40));
+        jPanel2.add(lblNombreJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 70, 100, 40));
 
         panelFondo.add(jPanel2);
         jPanel2.setBounds(10, 30, 370, 140);
@@ -278,17 +288,17 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         jPanel4x4.setLayout(jPanel4x4Layout);
         jPanel4x4Layout.setHorizontalGroup(
             jPanel4x4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4x4Layout.createSequentialGroup()
-                .addContainerGap(59, Short.MAX_VALUE)
+            .addGroup(jPanel4x4Layout.createSequentialGroup()
+                .addGap(56, 56, 56)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         jPanel4x4Layout.setVerticalGroup(
             jPanel4x4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4x4Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(33, 33, 33)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("", jPanel4x4);
@@ -307,7 +317,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 315, Short.MAX_VALUE)
+            .addGap(0, 329, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel5x5Layout = new javax.swing.GroupLayout(jPanel5x5);
@@ -323,8 +333,8 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
             jPanel5x5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5x5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, 333, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("", jPanel5x5);
@@ -332,15 +342,91 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         panelFondo.add(jTabbedPane1);
         jTabbedPane1.setBounds(10, 130, 370, 380);
 
+        panelBoton.setBackground(new java.awt.Color(140, 211, 179));
+
+        lblNuevaPartida.setBackground(new java.awt.Color(255, 255, 255));
+        lblNuevaPartida.setFont(new java.awt.Font("Montserrat", 1, 20)); // NOI18N
+        lblNuevaPartida.setForeground(new java.awt.Color(0, 0, 0));
+        lblNuevaPartida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNuevaPartida.setText("Nueva partida");
+        lblNuevaPartida.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblNuevaPartida.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblNuevaPartidaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblNuevaPartidaMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblNuevaPartidaMousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelBotonLayout = new javax.swing.GroupLayout(panelBoton);
+        panelBoton.setLayout(panelBotonLayout);
+        panelBotonLayout.setHorizontalGroup(
+            panelBotonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBotonLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblNuevaPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        panelBotonLayout.setVerticalGroup(
+            panelBotonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBotonLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblNuevaPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        panelFondo.add(panelBoton);
+        panelBoton.setBounds(20, 510, 160, 50);
+
+        panelBoton1.setBackground(new java.awt.Color(216, 195, 165));
+
+        lblSalir.setBackground(new java.awt.Color(255, 255, 255));
+        lblSalir.setFont(new java.awt.Font("Montserrat", 1, 20)); // NOI18N
+        lblSalir.setForeground(new java.awt.Color(0, 0, 0));
+        lblSalir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSalir.setText("Salir");
+        lblSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblSalirMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblSalirMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblSalirMousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelBoton1Layout = new javax.swing.GroupLayout(panelBoton1);
+        panelBoton1.setLayout(panelBoton1Layout);
+        panelBoton1Layout.setHorizontalGroup(
+            panelBoton1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBoton1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        panelBoton1Layout.setVerticalGroup(
+            panelBoton1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBoton1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        panelFondo.add(panelBoton1);
+        panelBoton1.setBounds(210, 510, 160, 50);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
+            .addComponent(panelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
+            .addComponent(panelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
         );
 
         pack();
@@ -355,8 +441,36 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
     }//GEN-LAST:event_lblCierreMouseEntered
 
     private void lblCierreMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCierreMouseExited
-        lblCierre.setForeground(new Color(240, 192, 255));
+        lblCierre.setForeground(new Color(0, 0, 0));
     }//GEN-LAST:event_lblCierreMouseExited
+
+    private void lblNuevaPartidaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNuevaPartidaMouseEntered
+        panelBoton.setBackground(new Color(183, 221, 200));
+    }//GEN-LAST:event_lblNuevaPartidaMouseEntered
+
+    private void lblNuevaPartidaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNuevaPartidaMouseExited
+        panelBoton.setBackground(new Color(140, 211, 179));
+    }//GEN-LAST:event_lblNuevaPartidaMouseExited
+
+    private void lblNuevaPartidaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNuevaPartidaMousePressed
+
+    }//GEN-LAST:event_lblNuevaPartidaMousePressed
+
+    private void lblSalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSalirMouseEntered
+        panelBoton1.setBackground(new Color(204, 183, 153));
+    }//GEN-LAST:event_lblSalirMouseEntered
+
+    private void lblSalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSalirMouseExited
+        panelBoton1.setBackground(new Color(216,195,165));
+    }//GEN-LAST:event_lblSalirMouseExited
+
+    private void lblSalirMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSalirMousePressed
+        this.dispose();
+        PanelMain_Triquitraque panelMain = new PanelMain_Triquitraque();
+        panelMain.setVisible(true);
+        limpiarTablero();
+        tablero3x3.reiniciarJuego();
+    }//GEN-LAST:event_lblSalirMousePressed
 
     public Jugador getJugador1() {
         return jugador1;
@@ -390,8 +504,12 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
     private javax.swing.JLabel lblCierre;
     private javax.swing.JLabel lblNombreJ1;
     private javax.swing.JLabel lblNombreJ2;
+    private javax.swing.JLabel lblNuevaPartida;
     private javax.swing.JLabel lblPuntajeJ1;
     private javax.swing.JLabel lblPuntajeJ2;
+    private javax.swing.JLabel lblSalir;
+    private javax.swing.JPanel panelBoton;
+    private javax.swing.JPanel panelBoton1;
     private javax.swing.JPanel panelFondo;
     // End of variables declaration//GEN-END:variables
 }

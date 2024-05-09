@@ -6,6 +6,7 @@ package GUI;
 
 import java.awt.Color;
 import javax.swing.JOptionPane;
+import javax.swing.JRootPane;
 
 /**
  *
@@ -22,6 +23,7 @@ public class Tablero {
     public Tablero(String[][] tablero, PanelTablero_TriquiTraque panelTablero) {
         this.tablero = tablero;
         this.panelTablero = panelTablero;
+
     }
 
     public String[][] getTablero() {
@@ -34,7 +36,6 @@ public class Tablero {
 
     Jugador jugador1 = new Jugador("", "X", Color.BLACK);
     Jugador jugador2 = new Jugador("", "O", Color.BLACK);
-    
 
     public String colocarFicha(boolean turnoJugador) {
         String marca;
@@ -47,7 +48,7 @@ public class Tablero {
     }
 
     public void finDelJuego3x3(int casilla, String marca, Boolean turno, String nombreJ1, String nombreJ2) {
-        boolean empate = true;
+
         switch (casilla) {
             case 1:
                 tablero[0][0] = marca;
@@ -80,24 +81,38 @@ public class Tablero {
                 System.out.println("Casilla inválida");
                 break;
         }
+
+        if (hayGanador3x3(tablero)) {
+            String nombreGanador = turno ? nombreJ2 : nombreJ1;
+            JOptionPane.showMessageDialog(null, "¡El jugador " + nombreGanador + " es el ganador!", "Ganador", JOptionPane.WARNING_MESSAGE);
+            panelTablero.manejarFinDelJuego(nombreGanador);
+            return;
+        }
+
+        boolean empate = true;
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero[i].length; j++) {
                 if (tablero[i][j] == null) {
                     empate = false;
+                    break;
                 }
             }
         }
-        if (hayGanador3x3(tablero)) {
-            String nombreGanador = "";
-            if (turno) {
-                nombreGanador = nombreJ2;
-            } else if (!turno) {
-                nombreGanador = nombreJ1;
+
+        if (empate) {
+            JOptionPane.showMessageDialog(null, "El juego ha terminado en empate, Se reiniciara el tablero", "Empate", JOptionPane.WARNING_MESSAGE);
+            panelTablero.limpiarTablero();
+            reiniciarJuego();
+
+        }
+    }
+
+    public void reiniciarJuego() {
+
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero[i].length; j++) {
+                tablero[i][j] = null;
             }
-            JOptionPane.showMessageDialog(null, "¡El jugador " + nombreGanador + " es el ganador!", "Ganador", JOptionPane.WARNING_MESSAGE);
-            panelTablero.manejarFinDelJuego(nombreGanador);
-        } else if (empate) {
-            JOptionPane.showMessageDialog(null, "El juego ha terminado en empate", "Fin el juego", JOptionPane.WARNING_MESSAGE);
         }
     }
 
@@ -195,6 +210,9 @@ public class Tablero {
             panelTablero.manejarFinDelJuego(nombreGanador);
         } else if (empate) {
             JOptionPane.showMessageDialog(null, "El juego ha terminado en empate", "Fin el juego", JOptionPane.WARNING_MESSAGE);
+            panelTablero.limpiarTablero();
+            reiniciarJuego();
+
         }
     }
 
@@ -212,7 +230,7 @@ public class Tablero {
         if (tablero[0][0] != null && tablero[0][0].equals(tablero[1][1]) && tablero[0][0].equals(tablero[2][2]) && tablero[0][0].equals(tablero[3][3])) {
             return true;
         }
-            if (tablero[0][3] != null && tablero[0][3].equals(tablero[1][2]) && tablero[0][3].equals(tablero[2][1]) && tablero[0][3].equals(tablero[3][0])) {
+        if (tablero[0][3] != null && tablero[0][3].equals(tablero[1][2]) && tablero[0][3].equals(tablero[2][1]) && tablero[0][3].equals(tablero[3][0])) {
             return true;
         }
         return false;
@@ -318,6 +336,8 @@ public class Tablero {
             panelTablero.manejarFinDelJuego(nombreGanador);
         } else if (empate) {
             JOptionPane.showMessageDialog(null, "El juego ha terminado en empate", "Fin el juego", JOptionPane.WARNING_MESSAGE);
+            panelTablero.limpiarTablero();
+            reiniciarJuego();
         }
     }
 

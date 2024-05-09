@@ -102,7 +102,27 @@ public class Jugador {
             case "Amarillo":
                 colorFicha = Color.YELLOW;
                 break;
-
+            
+            case "Blanco":
+                colorFicha = Color.WHITE;
+                break;
+                
+            case "Gris":
+                colorFicha = Color.GRAY;
+                break;
+                
+            case "Turquesa":
+                colorFicha = new Color(64, 224, 208);
+                break;
+                
+            case "Coral":
+                colorFicha = new Color(255, 127, 80);
+                break;
+                
+            case "Negro":
+                colorFicha = Color.BLACK;
+                break;
+                
             default:
                 break;
 
