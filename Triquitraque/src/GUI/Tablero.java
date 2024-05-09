@@ -5,7 +5,6 @@
 package GUI;
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -16,7 +15,6 @@ import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JRootPane;
 import javax.swing.SwingConstants;
 import javax.swing.Timer;
 
@@ -70,9 +68,7 @@ public class Tablero {
     }
 
     public void crearTablero(int filas, int columnas, JPanel panel, Color colorJugador1, Color colorJugador2) {
-
         labelsCasillas = new JLabel[filas * columnas];
-
         panel.setLayout(new GridLayout(filas, columnas));
 
         for (int i = 0; i < filas; i++) {
@@ -91,22 +87,29 @@ public class Tablero {
                             clickedLabel.setForeground(panelTablero.turnoJugador1 ? colorJugador1 : colorJugador2);
                             panelTablero.turnoJugador1 = !panelTablero.turnoJugador1;
 
-                            String[] parts = clickedLabel.getName().split("_");
-                            int casilla = Integer.parseInt(parts[1]);
+                            Timer timer = new Timer(25, new ActionListener() {
+                                @Override
+                                public void actionPerformed(ActionEvent e) {
+                                    String[] parts = clickedLabel.getName().split("_");
+                                    int casilla = Integer.parseInt(parts[1]);
 
-                            switch (filas) {
-                                case 3:
-                                    finDelJuego3x3(casilla, clickedLabel.getText(), panelTablero.turnoJugador1, panelTablero.jugador1.getNombre(), panelTablero.jugador2.getNombre());
-                                    break;
-                                case 4:
-                                    finDelJuego4x4(casilla, clickedLabel.getText(), panelTablero.turnoJugador1, panelTablero.jugador1.getNombre(), panelTablero.jugador2.getNombre());
-                                    break;
-                                case 5:
-                                    finDelJuego5x5(casilla, clickedLabel.getText(), panelTablero.turnoJugador1, panelTablero.jugador1.getNombre(), panelTablero.jugador2.getNombre());
-                                    break;
-                                default:
-                                    break;
-                            }
+                                    switch (filas) {
+                                        case 3:
+                                            finDelJuego3x3(casilla, clickedLabel.getText(), panelTablero.turnoJugador1, panelTablero.jugador1.getNombre(), panelTablero.jugador2.getNombre());
+                                            break;
+                                        case 4:
+                                            finDelJuego4x4(casilla, clickedLabel.getText(), panelTablero.turnoJugador1, panelTablero.jugador1.getNombre(), panelTablero.jugador2.getNombre());
+                                            break;
+                                        case 5:
+                                            finDelJuego5x5(casilla, clickedLabel.getText(), panelTablero.turnoJugador1, panelTablero.jugador1.getNombre(), panelTablero.jugador2.getNombre());
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                }
+                            });
+                            timer.setRepeats(false);
+                            timer.start();
                         }
                     }
                 });

@@ -236,7 +236,7 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
         panelFondo.add(lblTitulo);
         lblTitulo.setBounds(0, 30, 420, 42);
 
-        cbColorJ2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Negro", "Azul", "Rojo", "Amarillo", "Verde", "Rosado", "Blanco", "Gris", "Naranja", "Marrón", "Turquesa", "Coral", "Morado", " " }));
+        cbColorJ2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Negro", "Azul", "Rojo", "Amarillo", "Verde", "Rosado", "Blanco", "Gris", "Naranja", "Marrón", "Turquesa", "Coral", "Morado" }));
         panelFondo.add(cbColorJ2);
         cbColorJ2.setBounds(370, 170, 82, 22);
 
@@ -279,15 +279,13 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
     }//GEN-LAST:event_panelFondoMousePressed
 
     private void lblInicarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInicarMousePressed
-        this.dispose();
-
         Jugador jugador1 = new Jugador();
         if (txtJugador1.getText().equals("")) {
             jugador1.setNombre("Jugador 1");
         } else {
             jugador1.setNombre(txtJugador1.getText());
         }
-        String colorSeleccionadoJ1 = (String) cbColorJ1.getSelectedItem(); 
+        String colorSeleccionadoJ1 = (String) cbColorJ1.getSelectedItem();
 
         Jugador jugador2 = new Jugador();
         if (txtJugador2.getText().equals("")) {
@@ -295,7 +293,7 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
         } else {
             jugador2.setNombre(txtJugador2.getText());
         }
-        String colorSeleccionadoJ2 = (String) cbColorJ2.getSelectedItem(); 
+        String colorSeleccionadoJ2 = (String) cbColorJ2.getSelectedItem();
         int tamañoTablero = 0;
         if (rbt3x3.isSelected()) {
             tamañoTablero = 3;
@@ -308,6 +306,7 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
         if (!txtJugador1.getText().isEmpty() && !txtJugador2.getText().isEmpty() && tamañoTablero != 0) {
             PanelTablero_TriquiTraque TriquiTraque = new PanelTablero_TriquiTraque(jugador1, jugador2, tamañoTablero, colorSeleccionadoJ1, colorSeleccionadoJ2);
             TriquiTraque.setVisible(true);
+            this.dispose();
         } else {
             JOptionPane.showMessageDialog(this, "Faltan campos por llenar.", "Alerta", JOptionPane.WARNING_MESSAGE);
         }
@@ -340,19 +339,19 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
 
     private void txtJugador1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtJugador1FocusLost
         if (txtJugador1.getText().equals(""))
-        txtJugador1.setText("Jugador 1");
+            txtJugador1.setText("Jugador 1");
     }//GEN-LAST:event_txtJugador1FocusLost
 
     private void txtJugador1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtJugador1FocusGained
         if (txtJugador1.getText().equals("Jugador 1"))
-        txtJugador1.setText("");
+            txtJugador1.setText("");
     }//GEN-LAST:event_txtJugador1FocusGained
 
     private void txtJugador2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtJugador2KeyTyped
         char caracter = Character.toLowerCase(evt.getKeyChar());
         evt.setKeyChar(caracter);
         if (txtJugador2.getText().length() >= 10)
-        evt.consume();
+            evt.consume();
     }//GEN-LAST:event_txtJugador2KeyTyped
 
     private void txtJugador2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtJugador2MouseExited
@@ -366,12 +365,12 @@ public class PanelMain_Triquitraque extends javax.swing.JFrame {
 
     private void txtJugador2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtJugador2FocusLost
         if (txtJugador2.getText().equals(""))
-        txtJugador2.setText("Jugador 2");
+            txtJugador2.setText("Jugador 2");
     }//GEN-LAST:event_txtJugador2FocusLost
 
     private void txtJugador2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtJugador2FocusGained
         if (txtJugador2.getText().equals("Jugador 2"))
-        txtJugador2.setText("");
+            txtJugador2.setText("");
     }//GEN-LAST:event_txtJugador2FocusGained
 
     private void lblCierreMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCierreMouseExited

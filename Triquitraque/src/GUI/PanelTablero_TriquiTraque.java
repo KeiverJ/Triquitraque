@@ -1,7 +1,6 @@
 package GUI;
 
 import java.awt.Color;
-
 /**
  *
  * @author keiver
@@ -13,10 +12,10 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
     int puntajeJugador1 = 0;
     int puntajeJugador2 = 0;
     int tamañoTableroActual;
-    
+
     private Color colorJ1;
     private Color colorJ2;
-    
+
     String[][] matriz3x3 = new String[3][3];
     String[][] matriz4x4 = new String[4][4];
     String[][] matriz5x5 = new String[5][5];
@@ -53,14 +52,23 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
             case 3:
                 jTabbedPane1.setSelectedIndex(0);
                 tablero3x3.crearTablero(3, 3, jPanel4, colorJ1, colorJ2);
+                rbt3x3.setEnabled(false);
+                rbt4x4.setEnabled(true);
+                rbt5x5.setEnabled(true);
                 break;
             case 4:
                 jTabbedPane1.setSelectedIndex(1);
                 tablero4x4.crearTablero(4, 4, jPanel7, colorJ1, colorJ2);
+                rbt3x3.setEnabled(true);
+                rbt4x4.setEnabled(false);
+                rbt5x5.setEnabled(true);
                 break;
             case 5:
                 jTabbedPane1.setSelectedIndex(2);
                 tablero5x5.crearTablero(5, 5, jPanel8, colorJ1, colorJ2);
+                rbt3x3.setEnabled(true);
+                rbt4x4.setEnabled(true);
+                rbt5x5.setEnabled(false);
                 break;
             default:
                 break;
@@ -414,14 +422,23 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
             jTabbedPane1.setSelectedIndex(0);
             tablero3x3.limpiarPanel(jPanel4);
             tablero3x3.crearTablero(3, 3, jPanel4, colorJ1, colorJ2);
+            rbt3x3.setEnabled(false);
+            rbt4x4.setEnabled(true);
+            rbt5x5.setEnabled(true);
         } else if (rbt4x4.isSelected()) {
             jTabbedPane1.setSelectedIndex(1);
             tablero4x4.limpiarPanel(jPanel7);
             tablero4x4.crearTablero(4, 4, jPanel7, colorJ1, colorJ2);
+            rbt3x3.setEnabled(true);
+            rbt4x4.setEnabled(false);
+            rbt5x5.setEnabled(true);
         } else if (rbt5x5.isSelected()) {
             jTabbedPane1.setSelectedIndex(2);
             tablero5x5.limpiarPanel(jPanel8);
             tablero5x5.crearTablero(5, 5, jPanel8, colorJ1, colorJ2);
+            rbt3x3.setEnabled(true);
+            rbt4x4.setEnabled(true);
+            rbt5x5.setEnabled(false);
         }
     }//GEN-LAST:event_lblCambiarTableroMousePressed
 
