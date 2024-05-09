@@ -14,7 +14,6 @@ import javax.swing.JOptionPane;
 public class Tablero {
 
     private String[][] tablero;
-
     private PanelTablero_TriquiTraque panelTablero;
 
     public Tablero() {
@@ -35,6 +34,7 @@ public class Tablero {
 
     Jugador jugador1 = new Jugador("", "X", Color.BLACK);
     Jugador jugador2 = new Jugador("", "O", Color.BLACK);
+    
 
     public String colocarFicha(boolean turnoJugador) {
         String marca;
