@@ -13,7 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 public class Jugador {
-    
+
     private String nombre;
     private String marca;
     private Color color;
@@ -50,75 +50,66 @@ public class Jugador {
     public void setColor(Color color) {
         this.color = color;
     }
-    
-    public void configurarJugador(Jugador jugador, String nombre, JLabel labelNombre, JLabel labelFicha) {
-        
+
+    public void configurarJugador(Jugador jugador, String nombre, String colorSeleccionado, JLabel labelNombre, JLabel labelFicha) {
+
         if (nombre.isEmpty()) {
-            
             JOptionPane.showMessageDialog(null, "Tienes que poner un nombre de jugador.", "Alerta", JOptionPane.WARNING_MESSAGE);
-            
-        } 
-        
-        else {
-            
+        } else {
             jugador.setNombre(nombre);
-            
-            Color colorLabel = color.BLACK;
-            
+            Color colorLabel = jugador.configurarColorJugador(colorSeleccionado);
             labelFicha.setForeground(colorLabel);
             labelNombre.setText(jugador.getNombre());
-            
         }
-        
     }
-    
-    public Color configurarColorJugador(String colorSeleccionado){
-        
+
+    public Color configurarColorJugador(String colorSeleccionado) {
+
         Jugador jugador = new Jugador("", "", Color.BLACK);
-        
+
         Color colorFicha = Color.BLACK;
-        
+
         switch (colorSeleccionado) {
-            
+
             case "Naranja":
                 colorFicha = new Color(128, 0, 128);
                 break;
-            
+
             case "Morado":
                 colorFicha = new Color(128, 0, 128);
                 break;
-            
+
             case "Marrón":
-                colorFicha = new Color(139,69,19);
+                colorFicha = new Color(139, 69, 19);
                 break;
-            
+
             case "Rosado":
                 colorFicha = Color.PINK;
                 break;
-            
+
             case "Rojo":
                 colorFicha = Color.RED;
                 break;
-                
+
             case "Azul":
                 colorFicha = Color.BLUE;
                 break;
-                
+
             case "Verde":
                 colorFicha = Color.GREEN;
                 break;
-                
+
             case "Amarillo":
                 colorFicha = Color.YELLOW;
                 break;
-                
+
             default:
                 break;
-                
+
         }
-        
+
         return colorFicha;
-        
+
     }
-    
+
 }

@@ -1,14 +1,12 @@
 package GUI;
 
 import java.awt.Color;
-import GUI.Jugador;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
@@ -34,7 +32,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
     boolean turnoJugador1 = true;
 
-    public PanelTablero_TriquiTraque(Jugador jugador1, Jugador jugador2, int tamañoTablero) {
+    public PanelTablero_TriquiTraque(Jugador jugador1, Jugador jugador2, int tamañoTablero, String colorSeleccionadoJ1, String colorSeleccionadoJ2) {
         this.jugador1 = jugador1;
         this.jugador2 = jugador2;
         setUndecorated(true);
@@ -47,11 +45,14 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         lblNombreJ1.setText(jugador1.getNombre());
         lblNombreJ2.setText(jugador2.getNombre());
 
-        init(tamañoTablero);
+        Color colorJ1 = jugador1.configurarColorJugador(colorSeleccionadoJ1);
+        Color colorJ2 = jugador2.configurarColorJugador(colorSeleccionadoJ2);
 
+        init(tamañoTablero, colorJ1, colorJ2);
     }
 
-    private void crearTablero(int filas, int columnas, JPanel panel) {
+    private void crearTablero(int filas, int columnas, JPanel panel, Color colorJugador1, Color colorJugador2) {
+
         panel.setLayout(new GridLayout(filas, columnas));
 
         labelsCasillas = new JLabel[filas * columnas];
@@ -69,6 +70,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
                         JLabel clickedLabel = (JLabel) e.getSource();
                         if (clickedLabel.getText().isEmpty()) {
                             clickedLabel.setText(turnoJugador1 ? "X" : "O");
+                            clickedLabel.setForeground(turnoJugador1 ? colorJugador1 : colorJugador2);
                             turnoJugador1 = !turnoJugador1;
 
                             String[] parts = clickedLabel.getName().split("_");
@@ -96,19 +98,19 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         }
     }
 
-    public void init(int tamañoTablero) {
+    private void init(int tamañoTablero, Color colorJ1, Color colorJ2) {
         switch (tamañoTablero) {
             case 3:
                 jTabbedPane1.setSelectedIndex(0);
-                crearTablero(3, 3, jPanel4);
+                crearTablero(3, 3, jPanel4, colorJ1, colorJ2);
                 break;
             case 4:
                 jTabbedPane1.setSelectedIndex(1);
-                crearTablero(4, 4, jPanel7);
+                crearTablero(4, 4, jPanel7, colorJ1, colorJ2);
                 break;
             case 5:
                 jTabbedPane1.setSelectedIndex(2);
-                crearTablero(5, 5, jPanel8);
+                crearTablero(5, 5, jPanel8, colorJ1, colorJ2);
                 break;
             default:
                 break;
