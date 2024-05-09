@@ -86,6 +86,7 @@ public class Tablero {
             String nombreGanador = turno ? nombreJ2 : nombreJ1;
             JOptionPane.showMessageDialog(null, "¡El jugador " + nombreGanador + " es el ganador!", "Ganador", JOptionPane.WARNING_MESSAGE);
             panelTablero.manejarFinDelJuego(nombreGanador);
+            panelTablero.juegoTerminado = true;
             return;
         }
 
@@ -208,6 +209,7 @@ public class Tablero {
             }
             JOptionPane.showMessageDialog(null, "¡El jugador " + nombreGanador + " es el ganador!", "Ganador", JOptionPane.WARNING_MESSAGE);
             panelTablero.manejarFinDelJuego(nombreGanador);
+            panelTablero.juegoTerminado = true;
         } else if (empate) {
             JOptionPane.showMessageDialog(null, "El juego ha terminado en empate", "Fin el juego", JOptionPane.WARNING_MESSAGE);
             panelTablero.limpiarTablero();
@@ -334,6 +336,7 @@ public class Tablero {
             }
             JOptionPane.showMessageDialog(null, "¡El jugador " + nombreGanador + " es el ganador!", "Ganador", JOptionPane.WARNING_MESSAGE);
             panelTablero.manejarFinDelJuego(nombreGanador);
+            panelTablero.juegoTerminado = true;
         } else if (empate) {
             JOptionPane.showMessageDialog(null, "El juego ha terminado en empate", "Fin el juego", JOptionPane.WARNING_MESSAGE);
             panelTablero.limpiarTablero();
