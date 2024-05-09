@@ -35,7 +35,7 @@ public class Tablero {
 
     public Tablero(String[][] tablero, PanelTablero_TriquiTraque panelTablero) {
         this.tablero = tablero;
-        this.panelTablero = panelTablero; 
+        this.panelTablero = panelTablero;
 
     }
 
@@ -96,13 +96,13 @@ public class Tablero {
 
                             switch (filas) {
                                 case 3:
-                                    finDelJuego3x3(casilla, clickedLabel.getText(), panelTablero.turnoJugador1, panelTablero.jugador1.getNombre(),  panelTablero.jugador2.getNombre());
+                                    finDelJuego3x3(casilla, clickedLabel.getText(), panelTablero.turnoJugador1, panelTablero.jugador1.getNombre(), panelTablero.jugador2.getNombre());
                                     break;
                                 case 4:
-                                    finDelJuego4x4(casilla, clickedLabel.getText(), panelTablero.turnoJugador1, panelTablero.jugador1.getNombre(),  panelTablero.jugador2.getNombre());
+                                    finDelJuego4x4(casilla, clickedLabel.getText(), panelTablero.turnoJugador1, panelTablero.jugador1.getNombre(), panelTablero.jugador2.getNombre());
                                     break;
                                 case 5:
-                                    finDelJuego5x5(casilla, clickedLabel.getText(), panelTablero.turnoJugador1, panelTablero.jugador1.getNombre(),  panelTablero.jugador2.getNombre());
+                                    finDelJuego5x5(casilla, clickedLabel.getText(), panelTablero.turnoJugador1, panelTablero.jugador1.getNombre(), panelTablero.jugador2.getNombre());
                                     break;
                                 default:
                                     break;
@@ -122,6 +122,12 @@ public class Tablero {
         }
     }
 
+    public void limpiarPanel(JPanel panel) {
+        panel.removeAll();
+        panel.revalidate();
+        panel.repaint();
+    }
+
     public String colocarFicha(boolean turnoJugador) {
         String marca;
         if (turnoJugador) {
@@ -133,7 +139,7 @@ public class Tablero {
     }
 
     public void finDelJuego3x3(int casilla, String marca, Boolean turno, String nombreJ1, String nombreJ2) {
-        
+
         switch (casilla) {
             case 1:
                 tablero[0][0] = marca;

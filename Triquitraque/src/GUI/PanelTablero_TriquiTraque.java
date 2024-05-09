@@ -12,7 +12,11 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
     Jugador jugador2 = new Jugador("", "O", Color.BLACK);
     int puntajeJugador1 = 0;
     int puntajeJugador2 = 0;
-
+    int tamañoTableroActual;
+    
+    private Color colorJ1;
+    private Color colorJ2;
+    
     String[][] matriz3x3 = new String[3][3];
     String[][] matriz4x4 = new String[4][4];
     String[][] matriz5x5 = new String[5][5];
@@ -20,7 +24,6 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
     Tablero tablero3x3 = new Tablero(matriz3x3, this);
     Tablero tablero4x4 = new Tablero(matriz4x4, this);
     Tablero tablero5x5 = new Tablero(matriz5x5, this);
-    int tamañoTableroActual;
 
     boolean turnoJugador1 = true;
 
@@ -37,13 +40,12 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         lblNombreJ1.setText(jugador1.getNombre());
         lblNombreJ2.setText(jugador2.getNombre());
 
-        Color colorJ1 = jugador1.configurarColorJugador(colorSeleccionadoJ1);
-        Color colorJ2 = jugador2.configurarColorJugador(colorSeleccionadoJ2);
+        colorJ1 = jugador1.configurarColorJugador(colorSeleccionadoJ1);
+        colorJ2 = jugador2.configurarColorJugador(colorSeleccionadoJ2);
 
         init(tamañoTablero, colorJ1, colorJ2);
 
         tamañoTableroActual = tamañoTablero;
-
     }
 
     private void init(int tamañoTablero, Color colorJ1, Color colorJ2) {
@@ -74,6 +76,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btngTamaño = new javax.swing.ButtonGroup();
         panelFondo = new diseño.PanelRedondeado();
         lblCierre = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -92,9 +95,12 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         jPanel5x5 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         panelBoton = new javax.swing.JPanel();
-        lblNuevaPartida = new javax.swing.JLabel();
+        lblCambiarTablero = new javax.swing.JLabel();
         panelBoton1 = new javax.swing.JPanel();
         lblTerminarPartida = new javax.swing.JLabel();
+        rbt5x5 = new javax.swing.JRadioButton();
+        rbt3x3 = new javax.swing.JRadioButton();
+        rbt4x4 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -277,21 +283,21 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
         panelBoton.setBackground(new java.awt.Color(140, 211, 179));
 
-        lblNuevaPartida.setBackground(new java.awt.Color(255, 255, 255));
-        lblNuevaPartida.setFont(new java.awt.Font("Montserrat", 1, 20)); // NOI18N
-        lblNuevaPartida.setForeground(new java.awt.Color(0, 0, 0));
-        lblNuevaPartida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblNuevaPartida.setText("Nueva partida");
-        lblNuevaPartida.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblNuevaPartida.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblCambiarTablero.setBackground(new java.awt.Color(255, 255, 255));
+        lblCambiarTablero.setFont(new java.awt.Font("Montserrat", 1, 20)); // NOI18N
+        lblCambiarTablero.setForeground(new java.awt.Color(0, 0, 0));
+        lblCambiarTablero.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCambiarTablero.setText("Cambiar tablero");
+        lblCambiarTablero.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblCambiarTablero.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblNuevaPartidaMouseEntered(evt);
+                lblCambiarTableroMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblNuevaPartidaMouseExited(evt);
+                lblCambiarTableroMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                lblNuevaPartidaMousePressed(evt);
+                lblCambiarTableroMousePressed(evt);
             }
         });
 
@@ -301,17 +307,17 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
             panelBotonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBotonLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblNuevaPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lblCambiarTablero, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         panelBotonLayout.setVerticalGroup(
             panelBotonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBotonLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblNuevaPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lblCambiarTablero, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         panelFondo.add(panelBoton);
-        panelBoton.setBounds(20, 530, 160, 50);
+        panelBoton.setBounds(20, 560, 160, 50);
 
         panelBoton1.setBackground(new java.awt.Color(216, 195, 165));
 
@@ -349,7 +355,25 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         );
 
         panelFondo.add(panelBoton1);
-        panelBoton1.setBounds(210, 530, 160, 50);
+        panelBoton1.setBounds(210, 560, 160, 50);
+
+        btngTamaño.add(rbt5x5);
+        rbt5x5.setForeground(new java.awt.Color(0, 0, 0));
+        rbt5x5.setText("5x5");
+        panelFondo.add(rbt5x5);
+        rbt5x5.setBounds(230, 520, 50, 21);
+
+        btngTamaño.add(rbt3x3);
+        rbt3x3.setForeground(new java.awt.Color(0, 0, 0));
+        rbt3x3.setText("3x3");
+        panelFondo.add(rbt3x3);
+        rbt3x3.setBounds(110, 520, 41, 21);
+
+        btngTamaño.add(rbt4x4);
+        rbt4x4.setForeground(new java.awt.Color(0, 0, 0));
+        rbt4x4.setText("4x4");
+        panelFondo.add(rbt4x4);
+        rbt4x4.setBounds(170, 520, 50, 21);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -359,7 +383,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
+            .addComponent(panelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 640, Short.MAX_VALUE)
         );
 
         pack();
@@ -377,17 +401,29 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         lblCierre.setForeground(new Color(0, 0, 0));
     }//GEN-LAST:event_lblCierreMouseExited
 
-    private void lblNuevaPartidaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNuevaPartidaMouseEntered
+    private void lblCambiarTableroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCambiarTableroMouseEntered
         panelBoton.setBackground(new Color(183, 221, 200));
-    }//GEN-LAST:event_lblNuevaPartidaMouseEntered
+    }//GEN-LAST:event_lblCambiarTableroMouseEntered
 
-    private void lblNuevaPartidaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNuevaPartidaMouseExited
+    private void lblCambiarTableroMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCambiarTableroMouseExited
         panelBoton.setBackground(new Color(140, 211, 179));
-    }//GEN-LAST:event_lblNuevaPartidaMouseExited
+    }//GEN-LAST:event_lblCambiarTableroMouseExited
 
-    private void lblNuevaPartidaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNuevaPartidaMousePressed
-
-    }//GEN-LAST:event_lblNuevaPartidaMousePressed
+    private void lblCambiarTableroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCambiarTableroMousePressed
+        if (rbt3x3.isSelected()) {
+            jTabbedPane1.setSelectedIndex(0);
+            tablero3x3.limpiarPanel(jPanel4);
+            tablero3x3.crearTablero(3, 3, jPanel4, colorJ1, colorJ2);
+        } else if (rbt4x4.isSelected()) {
+            jTabbedPane1.setSelectedIndex(1);
+            tablero4x4.limpiarPanel(jPanel7);
+            tablero4x4.crearTablero(4, 4, jPanel7, colorJ1, colorJ2);
+        } else if (rbt5x5.isSelected()) {
+            jTabbedPane1.setSelectedIndex(2);
+            tablero5x5.limpiarPanel(jPanel8);
+            tablero5x5.crearTablero(5, 5, jPanel8, colorJ1, colorJ2);
+        }
+    }//GEN-LAST:event_lblCambiarTableroMousePressed
 
     private void lblTerminarPartidaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTerminarPartidaMouseEntered
         panelBoton1.setBackground(new Color(204, 183, 153));
@@ -434,6 +470,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup btngTamaño;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel8;
@@ -445,15 +482,18 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lblCambiarTablero;
     private javax.swing.JLabel lblCierre;
     private javax.swing.JLabel lblNombreJ1;
     private javax.swing.JLabel lblNombreJ2;
-    private javax.swing.JLabel lblNuevaPartida;
     private javax.swing.JLabel lblPuntajeJ1;
     private javax.swing.JLabel lblPuntajeJ2;
     private javax.swing.JLabel lblTerminarPartida;
     private javax.swing.JPanel panelBoton;
     private javax.swing.JPanel panelBoton1;
     private javax.swing.JPanel panelFondo;
+    private javax.swing.JRadioButton rbt3x3;
+    private javax.swing.JRadioButton rbt4x4;
+    private javax.swing.JRadioButton rbt5x5;
     // End of variables declaration//GEN-END:variables
 }
