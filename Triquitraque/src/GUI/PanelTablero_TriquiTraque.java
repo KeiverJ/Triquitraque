@@ -20,6 +20,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
     Tablero tablero3x3 = new Tablero(matriz3x3, this);
     Tablero tablero4x4 = new Tablero(matriz4x4, this);
     Tablero tablero5x5 = new Tablero(matriz5x5, this);
+    int tamañoTableroActual;
 
     boolean turnoJugador1 = true;
 
@@ -40,6 +41,9 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         Color colorJ2 = jugador2.configurarColorJugador(colorSeleccionadoJ2);
 
         init(tamañoTablero, colorJ1, colorJ2);
+
+        tamañoTableroActual = tamañoTablero;
+
     }
 
     private void init(int tamañoTablero, Color colorJ1, Color colorJ2) {
@@ -382,8 +386,7 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
     }//GEN-LAST:event_lblNuevaPartidaMouseExited
 
     private void lblNuevaPartidaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblNuevaPartidaMousePressed
-        PanelNuevaPartida_TriquiTraque resultado = new PanelNuevaPartida_TriquiTraque();
-        resultado.setVisible(true);
+
     }//GEN-LAST:event_lblNuevaPartidaMousePressed
 
     private void lblTerminarPartidaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTerminarPartidaMouseEntered
@@ -398,8 +401,19 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         this.dispose();
         PanelMain_Triquitraque panelMain = new PanelMain_Triquitraque();
         panelMain.setVisible(true);
-        tablero3x3.limpiarTablero();
-
+        switch (tamañoTableroActual) {
+            case 3:
+                tablero3x3.limpiarTablero();
+                break;
+            case 4:
+                tablero4x4.limpiarTablero();
+                break;
+            case 5:
+                tablero5x5.limpiarTablero();
+                break;
+            default:
+                break;
+        }
     }//GEN-LAST:event_lblTerminarPartidaMousePressed
 
     public Jugador getJugador1() {
