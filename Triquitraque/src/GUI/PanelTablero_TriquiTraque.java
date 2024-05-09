@@ -1,15 +1,6 @@
 package GUI;
 
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.Font;
-import java.awt.GridLayout;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import javax.swing.BorderFactory;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
 
 /**
  *
@@ -21,7 +12,6 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
     Jugador jugador2 = new Jugador("", "O", Color.BLACK);
     int puntajeJugador1 = 0;
     int puntajeJugador2 = 0;
-    private JLabel[] labelsCasillas;
 
     String[][] matriz3x3 = new String[3][3];
     String[][] matriz4x4 = new String[4][4];
@@ -31,7 +21,6 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
     Tablero tablero4x4 = new Tablero(matriz4x4, this);
     Tablero tablero5x5 = new Tablero(matriz5x5, this);
 
-    boolean juegoTerminado = false;
     boolean turnoJugador1 = true;
 
     public PanelTablero_TriquiTraque(Jugador jugador1, Jugador jugador2, int tamañoTablero, String colorSeleccionadoJ1, String colorSeleccionadoJ2) {
@@ -53,98 +42,28 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         init(tamañoTablero, colorJ1, colorJ2);
     }
 
-    private void crearTablero(int filas, int columnas, JPanel panel, Color colorJugador1, Color colorJugador2) {
-
-        labelsCasillas = new JLabel[filas * columnas];
-
-        panel.setLayout(new GridLayout(filas, columnas));
-
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < columnas; j++) {
-                JLabel label = new JLabel("");
-                label.setName("casilla_" + (i * columnas + j + 1));
-                label.setBorder(BorderFactory.createLineBorder(Color.GRAY));
-                label.setHorizontalAlignment(SwingConstants.CENTER);
-                label.setFont(new Font("Arial", Font.BOLD, 44));
-                label.addMouseListener(new MouseAdapter() {
-                    @Override
-                    public void mouseClicked(MouseEvent e) {
-                        JLabel clickedLabel = (JLabel) e.getSource();
-                        if (!juegoTerminado && clickedLabel.getText().isEmpty()) {
-                            clickedLabel.setText(turnoJugador1 ? "X" : "O");
-                            clickedLabel.setForeground(turnoJugador1 ? colorJugador1 : colorJugador2);
-                            turnoJugador1 = !turnoJugador1;
-
-                            String[] parts = clickedLabel.getName().split("_");
-                            int casilla = Integer.parseInt(parts[1]);
-
-                            switch (filas) {
-                                case 3:
-                                    tablero3x3.finDelJuego3x3(casilla, clickedLabel.getText(), turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
-                                    break;
-                                case 4:
-                                    tablero4x4.finDelJuego4x4(casilla, clickedLabel.getText(), turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
-                                    break;
-                                case 5:
-                                    tablero5x5.finDelJuego5x5(casilla, clickedLabel.getText(), turnoJugador1, jugador1.getNombre(), jugador2.getNombre());
-                                    break;
-                                default:
-                                    break;
-                            }
-                        }
-                    }
-                });
-                labelsCasillas[i * columnas + j] = label;
-                panel.add(label);
-            }
-        }
-    }
-
-    public void limpiarTablero() {
-        for (JLabel label : labelsCasillas) {
-            label.setText("");
-        }
-    }
-
     private void init(int tamañoTablero, Color colorJ1, Color colorJ2) {
         switch (tamañoTablero) {
             case 3:
                 jTabbedPane1.setSelectedIndex(0);
-                crearTablero(3, 3, jPanel4, colorJ1, colorJ2);
+                tablero3x3.crearTablero(3, 3, jPanel4, colorJ1, colorJ2);
                 break;
             case 4:
                 jTabbedPane1.setSelectedIndex(1);
-                crearTablero(4, 4, jPanel7, colorJ1, colorJ2);
+                tablero4x4.crearTablero(4, 4, jPanel7, colorJ1, colorJ2);
                 break;
             case 5:
                 jTabbedPane1.setSelectedIndex(2);
-                crearTablero(5, 5, jPanel8, colorJ1, colorJ2);
+                tablero5x5.crearTablero(5, 5, jPanel8, colorJ1, colorJ2);
                 break;
             default:
                 break;
         }
     }
 
-    private void actualizarPuntaje() {
+    public void actualizarPuntaje() {
         lblPuntajeJ1.setText(Integer.toString(puntajeJugador1));
         lblPuntajeJ2.setText(Integer.toString(puntajeJugador2));
-    }
-
-    void manejarFinDelJuego(String ganador) {
-
-        if (ganador.equals(jugador1.getNombre())) {
-            puntajeJugador1++;
-        } else if (ganador.equals(jugador2.getNombre())) {
-            puntajeJugador2++;
-        }
-        actualizarPuntaje();
-
-        Component[] labels = this.getComponents();
-        for (Component component : labels) {
-            if (component instanceof JLabel) {
-                component.setEnabled(false);
-            }
-        }
     }
 
     @SuppressWarnings("unchecked")
@@ -479,8 +398,8 @@ public class PanelTablero_TriquiTraque extends javax.swing.JFrame {
         this.dispose();
         PanelMain_Triquitraque panelMain = new PanelMain_Triquitraque();
         panelMain.setVisible(true);
-        limpiarTablero();
-        tablero3x3.reiniciarJuego();
+        tablero3x3.limpiarTablero();
+
     }//GEN-LAST:event_lblTerminarPartidaMousePressed
 
     public Jugador getJugador1() {

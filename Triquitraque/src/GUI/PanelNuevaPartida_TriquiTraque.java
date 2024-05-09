@@ -27,9 +27,13 @@ public class PanelNuevaPartida_TriquiTraque extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGrouptamaño = new javax.swing.ButtonGroup();
         panelFondo = new diseño.PanelRedondeado();
         lblCierre = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        rbt5x5 = new javax.swing.JRadioButton();
+        rbt3x3 = new javax.swing.JRadioButton();
+        rbt4x4 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,22 +57,41 @@ public class PanelNuevaPartida_TriquiTraque extends javax.swing.JFrame {
             }
         });
         panelFondo.add(lblCierre);
-        lblCierre.setBounds(380, 10, 30, 32);
+        lblCierre.setBounds(430, 0, 30, 32);
 
-        jLabel1.setFont(new java.awt.Font("Matura MT Script Capitals", 0, 12)); // NOI18N
-        jLabel1.setText("Elije el tablero en donde quieres seguir jugando");
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("Elije el tablero en donde quieres seguir jugando:");
         panelFondo.add(jLabel1);
-        jLabel1.setBounds(80, 20, 260, 30);
+        jLabel1.setBounds(30, 40, 390, 30);
+
+        buttonGrouptamaño.add(rbt5x5);
+        rbt5x5.setForeground(new java.awt.Color(0, 0, 0));
+        rbt5x5.setText("5x5");
+        panelFondo.add(rbt5x5);
+        rbt5x5.setBounds(260, 90, 50, 21);
+
+        buttonGrouptamaño.add(rbt3x3);
+        rbt3x3.setForeground(new java.awt.Color(0, 0, 0));
+        rbt3x3.setText("3x3");
+        panelFondo.add(rbt3x3);
+        rbt3x3.setBounds(140, 90, 41, 21);
+
+        buttonGrouptamaño.add(rbt4x4);
+        rbt4x4.setForeground(new java.awt.Color(0, 0, 0));
+        rbt4x4.setText("4x4");
+        panelFondo.add(rbt4x4);
+        rbt4x4.setBounds(200, 90, 50, 21);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelFondo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 458, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+            .addComponent(panelFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
         );
 
         pack();
@@ -88,8 +111,12 @@ public class PanelNuevaPartida_TriquiTraque extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGrouptamaño;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblCierre;
     private javax.swing.JPanel panelFondo;
+    private javax.swing.JRadioButton rbt3x3;
+    private javax.swing.JRadioButton rbt4x4;
+    private javax.swing.JRadioButton rbt5x5;
     // End of variables declaration//GEN-END:variables
 }

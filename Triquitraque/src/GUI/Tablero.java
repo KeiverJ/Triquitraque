@@ -5,8 +5,20 @@
 package GUI;
 
 import java.awt.Color;
+import java.awt.Component;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.BorderFactory;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JRootPane;
+import javax.swing.SwingConstants;
+import javax.swing.Timer;
 
 /**
  *
@@ -16,13 +28,14 @@ public class Tablero {
 
     private String[][] tablero;
     private PanelTablero_TriquiTraque panelTablero;
+    private JLabel[] labelsCasillas;
 
     public Tablero() {
     }
 
     public Tablero(String[][] tablero, PanelTablero_TriquiTraque panelTablero) {
         this.tablero = tablero;
-        this.panelTablero = panelTablero;
+        this.panelTablero = panelTablero; 
 
     }
 
@@ -37,6 +50,78 @@ public class Tablero {
     Jugador jugador1 = new Jugador("", "X", Color.BLACK);
     Jugador jugador2 = new Jugador("", "O", Color.BLACK);
 
+    public void reiniciarJuego() {
+        panelTablero.turnoJugador1 = true;
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero[i].length; j++) {
+                tablero[i][j] = null;
+            }
+        }
+    }
+
+    public void manejarFinDelJuego(String ganador) {
+
+        if (ganador.equals(panelTablero.jugador1.getNombre())) {
+            panelTablero.puntajeJugador1++;
+        } else if (ganador.equals(panelTablero.jugador2.getNombre())) {
+            panelTablero.puntajeJugador2++;
+        }
+        panelTablero.actualizarPuntaje();
+    }
+
+    public void crearTablero(int filas, int columnas, JPanel panel, Color colorJugador1, Color colorJugador2) {
+
+        labelsCasillas = new JLabel[filas * columnas];
+
+        panel.setLayout(new GridLayout(filas, columnas));
+
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                JLabel label = new JLabel("");
+                label.setName("casilla_" + (i * columnas + j + 1));
+                label.setBorder(BorderFactory.createLineBorder(Color.GRAY));
+                label.setHorizontalAlignment(SwingConstants.CENTER);
+                label.setFont(new Font("Arial", Font.BOLD, 44));
+                label.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        JLabel clickedLabel = (JLabel) e.getSource();
+                        if (clickedLabel.getText().isEmpty()) {
+                            clickedLabel.setText(panelTablero.turnoJugador1 ? "X" : "O");
+                            clickedLabel.setForeground(panelTablero.turnoJugador1 ? colorJugador1 : colorJugador2);
+                            panelTablero.turnoJugador1 = !panelTablero.turnoJugador1;
+
+                            String[] parts = clickedLabel.getName().split("_");
+                            int casilla = Integer.parseInt(parts[1]);
+
+                            switch (filas) {
+                                case 3:
+                                    finDelJuego3x3(casilla, clickedLabel.getText(), panelTablero.turnoJugador1, panelTablero.jugador1.getNombre(),  panelTablero.jugador2.getNombre());
+                                    break;
+                                case 4:
+                                    finDelJuego4x4(casilla, clickedLabel.getText(), panelTablero.turnoJugador1, panelTablero.jugador1.getNombre(),  panelTablero.jugador2.getNombre());
+                                    break;
+                                case 5:
+                                    finDelJuego5x5(casilla, clickedLabel.getText(), panelTablero.turnoJugador1, panelTablero.jugador1.getNombre(),  panelTablero.jugador2.getNombre());
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                    }
+                });
+                labelsCasillas[i * columnas + j] = label;
+                panel.add(label);
+            }
+        }
+    }
+
+    public void limpiarTablero() {
+        for (JLabel label : labelsCasillas) {
+            label.setText("");
+        }
+    }
+
     public String colocarFicha(boolean turnoJugador) {
         String marca;
         if (turnoJugador) {
@@ -48,7 +133,7 @@ public class Tablero {
     }
 
     public void finDelJuego3x3(int casilla, String marca, Boolean turno, String nombreJ1, String nombreJ2) {
-
+        
         switch (casilla) {
             case 1:
                 tablero[0][0] = marca;
@@ -85,8 +170,19 @@ public class Tablero {
         if (hayGanador3x3(tablero)) {
             String nombreGanador = turno ? nombreJ2 : nombreJ1;
             JOptionPane.showMessageDialog(null, "¡El jugador " + nombreGanador + " es el ganador!", "Ganador", JOptionPane.WARNING_MESSAGE);
-            panelTablero.manejarFinDelJuego(nombreGanador);
-            panelTablero.juegoTerminado = true;
+            manejarFinDelJuego(nombreGanador);
+            Timer timer = new Timer(500, new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    limpiarTablero();
+                    reiniciarJuego();
+                    panelTablero.turnoJugador1 = !turno;
+
+                }
+            });
+            timer.setRepeats(false);
+            timer.start();
+
             return;
         }
 
@@ -102,18 +198,9 @@ public class Tablero {
 
         if (empate) {
             JOptionPane.showMessageDialog(null, "El juego ha terminado en empate, Se reiniciara el tablero", "Empate", JOptionPane.WARNING_MESSAGE);
-            panelTablero.limpiarTablero();
+            limpiarTablero();
             reiniciarJuego();
 
-        }
-    }
-
-    public void reiniciarJuego() {
-
-        for (int i = 0; i < tablero.length; i++) {
-            for (int j = 0; j < tablero[i].length; j++) {
-                tablero[i][j] = null;
-            }
         }
     }
 
@@ -208,11 +295,21 @@ public class Tablero {
                 nombreGanador = nombreJ1;
             }
             JOptionPane.showMessageDialog(null, "¡El jugador " + nombreGanador + " es el ganador!", "Ganador", JOptionPane.WARNING_MESSAGE);
-            panelTablero.manejarFinDelJuego(nombreGanador);
-            panelTablero.juegoTerminado = true;
+            manejarFinDelJuego(nombreGanador);
+            Timer timer = new Timer(500, new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    limpiarTablero();
+                    reiniciarJuego();
+                    panelTablero.turnoJugador1 = !turno;
+
+                }
+            });
+            timer.setRepeats(false);
+            timer.start();
         } else if (empate) {
             JOptionPane.showMessageDialog(null, "El juego ha terminado en empate", "Fin el juego", JOptionPane.WARNING_MESSAGE);
-            panelTablero.limpiarTablero();
+            limpiarTablero();
             reiniciarJuego();
 
         }
@@ -335,11 +432,21 @@ public class Tablero {
                 nombreGanador = nombreJ1;
             }
             JOptionPane.showMessageDialog(null, "¡El jugador " + nombreGanador + " es el ganador!", "Ganador", JOptionPane.WARNING_MESSAGE);
-            panelTablero.manejarFinDelJuego(nombreGanador);
-            panelTablero.juegoTerminado = true;
+            manejarFinDelJuego(nombreGanador);
+            Timer timer = new Timer(500, new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    limpiarTablero();
+                    reiniciarJuego();
+                    panelTablero.turnoJugador1 = !turno;
+
+                }
+            });
+            timer.setRepeats(false);
+            timer.start();
         } else if (empate) {
             JOptionPane.showMessageDialog(null, "El juego ha terminado en empate", "Fin el juego", JOptionPane.WARNING_MESSAGE);
-            panelTablero.limpiarTablero();
+            limpiarTablero();
             reiniciarJuego();
         }
     }
