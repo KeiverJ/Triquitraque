@@ -2,13 +2,13 @@
     <h1>Triquitraque</h1>
 </div>
 
-<h2>Menú Principal</h2>
+<h2>Menú Principal:</h2>
 
 <div align="center">
     <img src="https://github.com/KeiverJ/Triquitraque/assets/160792532/5bbf7d48-b61a-4a28-8143-e3eff3bb5c00" width="45%" />
 </div>
 
-### Tableros
+<h2>Tableros:</h2>
 
 <div align="center">
     <img src="https://github.com/KeiverJ/Triquitraque/assets/160792532/1478a3bf-2f57-4d03-a51f-2fc3e2dbdee5" width="45%" />
